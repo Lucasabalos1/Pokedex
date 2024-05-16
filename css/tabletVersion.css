@@ -1,0 +1,45 @@
+/*
+
+-Modificar css para que se adapte a tablets
+
+*/
+@media (min-width: 500px) and (max-width: 800px) {
+    
+    .btn-menu{
+        display: none;
+    }
+
+    .menu-list-container{
+        display: block;
+    }
+
+    .menu-list{
+        display: flex;
+        list-style: none;
+    }
+
+    .menu-list li{
+        color: #fff;
+        font-size: 22px;
+        font-weight: 600;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .menu-list li:hover{
+        border-bottom: 1px solid #777;
+    }
+
+
+
+}
+
+
+/*
+
+-Realizar cambios en el diseño de filtro de busqueda para que se adapte a tablet
+
+-Realizar cambios para que en el diseño de mostrar los pokemon aparezcan 2
+
+
+*/

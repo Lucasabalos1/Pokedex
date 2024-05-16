@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="css/mobileVersion.css">
+    <link rel="stylesheet" href="css/tabletVersion.css">
+    <script src="https://kit.fontawesome.com/c82c5bef31.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    
+    <!--Header Start-->
+
+    <header>
+        <nav>
+            <div class="nav-row">
+                
+                <div class="logo-container">
+                    <img src="Images/Pokedex logo.png" alt="">
+                </div>
+
+                <!--Mobile Header Version-->
+
+                <div class="btn-menu" id="btn-menu">
+                    <label for="btn-menu" class="fa-solid fa-bars" ></label>
+                </div>
+
+                <div class="modal-menu-container" id="modal-menu-container">
+                    <div class="info-menu-container">
+                        
+                        <div class="btn-close" id="btn-close">
+                            <label for="cross-container" class="fa-solid fa-x"></label>
+                        </div>
+                       
+                        <ul class="menu-list-resp">
+                            <li>Home</li>
+                            <li>Pokedex</li>
+                            <li>Contact </li>
+                        </ul>
+                       
+                    </div>
+                </div>
+
+                <!--End Mobile Header Version-->
+                
+                <div class="menu-list-container">
+                    <ul class="menu-list">
+                        <li>Home</li>
+                        <li>Pokedex</li>
+                        <li>Contact </li>
+                    </ul>
+                </div>
+                
+            </div>
+        </nav>
+    </header>
+    <!--Header End-->
+    
+    <main>
+        <div class="main-container" id="main-container">
+
+            <section class="acordion-section">
+                <div class="acordion-container">
+                    <div class="acordion">
+                        
+                        <!--Acordion Responsive-->
+                        <div class="superior-row">
+                            <span class="filter-tittle">Filtro de busqueda</span>
+                            <label for="superior-row" class="fa-solid fa-arrow-right" id="arrow-button"></label>
+                        </div>
+
+                        <div class="inferior-row">
+                            
+                            <div class="search-container">
+                                <input type="text" placeholder="Ingresa el nombre de un pokemon ">
+                            </div>
+
+                            <div class="types-container">
+                                <button class="types">ACERO</button>
+                                <button class="types">AGUA</button>
+                                <button class="types">BICHO</button>
+                                <button class="types">DRAGON</button>
+                                <button class="types">ELECTRICO</button>
+                                <button class="types">FANTASMA</button>
+                                <button class="types">FUEGO</button>
+                                <button class="types">HADA</button>
+                                <button class="types">HIELO</button>
+                                <button class="types">LUCHA</button>
+                                <button class="types">NORMAL</button>
+                                <button class="types">PLANTA</button>
+                                <button class="types">PSIQUICO</button>
+                                <button class="types">ROCA</button>
+                                <button class="types">SINIESTRO</button>
+                                <button class="types">TIERRA</button>
+                                <button class="types">VENENO</button>
+                                <button class="types">VOLADOR</button>        
+                            </div>
+
+                            <div class="gen-container">
+                                <button class="gen" id="gen">GEN 1</button>
+                                <button class="gen" id="gen">GEN 2</button>
+                                <button class="gen" id="gen">GEN 3</button>
+                                <button class="gen" id="gen">GEN 4</button>
+                                <button class="gen" id="gen">GEN 5</button>
+                                <button class="gen" id="gen">GEN 6</button>
+                                <button class="gen" id="gen">GEN 7</button>
+                                <button class="gen" id="gen">GEN 8</button>
+                                <button class="gen" id="gen">GEN 9</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="pokemon-section">
+                <div class="pokemon-container" id="pokemon-container">
+                </div>
+            </section>
+
+            <div class="return-container">
+                    <button class="return-button">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+            </div>
+
+        </div>
+    </main>
+
+    <div class="preloader">
+        <div class="circle-container">
+        </div>
+    </div>
+    
+
+    <script src="js/main.js"></script>
+    <script src="js/obtain-for-api.js"></script>
+
+</body>
+</html>

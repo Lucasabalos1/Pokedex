@@ -1,0 +1,490 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+:root{
+    --white-color: #fff;
+    --black-color: #000;
+    --modal-background: rgba(0, 0, 0, 0.3);
+    --close-button-color: #890000;
+    --close-background: #dddddd;
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7c1cfff2-db8d-44cd-8a13-cb2a4162fae6/dd2zouo-047f7b3f-b895-43ac-82a4-abb6ca12c52a.png/v1/fill/w_1192,h_670,q_70,strp/pokemon_wallpaper___poke_ball_theme_by_0trinima0_dd2zouo-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MjE2MCIsInBhdGgiOiJcL2ZcLzdjMWNmZmYyLWRiOGQtNDRjZC04YTEzLWNiMmE0MTYyZmFlNlwvZGQyem91by0wNDdmN2IzZi1iODk1LTQzYWMtODJhNC1hYmI2Y2ExMmM1MmEucG5nIiwid2lkdGgiOiI8PTM4NDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.XS1rQqBUlisxOaqqd4gkDEhK68OInxjd-LRQ46yArEI');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-position: center center;
+}
+
+header{
+    width: 100%;
+    background: var(--black-color);
+    /* background: linear-gradient(180deg, rgba(245,0,0,1) 14%, rgba(138,26,19,1) 69%); */
+}
+
+nav{
+    width: 100%;
+}
+
+.nav-row{
+    width: 90%;
+    margin: auto;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container{
+    width: 200px;
+}
+
+.logo-container img{
+    width: 100%;
+    height: 100%;
+}
+
+.btn-menu{
+    background: var(--white-color);
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+.modal-menu-container{
+    display: block;
+    position: fixed;
+    background: var(--modal-background);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s linear ;
+    z-index: 1;
+}
+
+.info-menu-container{
+    position: fixed;
+    width: 50%;
+    background-color: #FFFFFF;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='763' height='763' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23000000' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%23FF0000'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
+    height: 100%;
+    opacity: 0;
+    visibility: visible; 
+    transform: translateX(-200px);
+    transition: all 0.3s linear;
+    z-index: 1;
+}
+
+.btn-close{
+    position: absolute;
+    background: var(--close-background);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 25px;
+    width: 50px;
+    text-align: center;
+    top: 5px;
+    right: 5px;
+}
+
+.btn-close label{
+    color: var(--close-button-color);
+}
+
+.menu-list-resp{
+    transform: translateY(100px);
+    text-align: center;
+    list-style: none;
+}
+
+.menu-list-resp li{
+    padding: 10px; 
+    margin-bottom: 10px; 
+    background: transparent; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 28px;
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: normal;
+    transition: background-color 0.3s ease; 
+}
+
+.menu-list-resp li:hover {
+    background-color: #e0e0e0; 
+}
+
+.visible{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.show-menu{
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.menu-list-container{
+    display: none;
+}
+/*PreLoader*/
+.preloader{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: var(--white-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-container{
+    width: 50px;
+    height: 50px;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Pokebola-pokeball-png-0.png/640px-Pokebola-pokeball-png-0.png');
+    background-size: 95%; 
+    background-repeat: no-repeat;
+    animation: 1.5s loader linear infinite;
+}
+
+@keyframes loader{
+    0%{
+        transform: translateY(0px), rotate(0deg);
+    }
+
+    10%{
+        transform: translateY(-30px);
+    }
+
+    15%{
+        transform: translateY(0px);
+    }
+
+    20%{
+        transform: rotate(360deg);
+    }
+}
+
+
+/*Main*/
+
+
+main{
+    width: 100%;
+    height: 100%;
+}
+
+.main-container{
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: relative;
+}
+
+.acordion-section{
+    width: 100%;
+}
+
+.acordion-container{
+    width: 90%;
+    height: 100%;
+    padding: 5px;
+    margin: 0 auto;
+}
+
+.acordion{
+    width: 100%;
+    background: #FFF8E7;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.superior-row{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+}
+
+
+.filter-tittle{
+    font-size: 26px;
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.superior-row label{
+    font-size: 30px;
+    transform: rotate(90deg);
+}
+
+
+.inferior-row{
+    width: 100%;
+    margin-top: 10px;
+    background: #FFFEEE;
+    max-height: 0; 
+    overflow: hidden; 
+    border-radius: 0px 0px 10px 10px;
+    transition: max-height 0.5s ease; 
+}
+
+.inferior-row.show {
+    max-height: 600px; 
+}
+
+.search-container{
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.search-container input{
+    width: 80%;
+    padding: 10px;
+    box-shadow: 0px 0px 10px 0px var(--black-color);
+    border-radius: 20px;
+    border: none;
+    font-size: 18px;
+}
+
+.types-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 5px;
+    margin: 10px 5px;
+}
+
+.types{
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 5px;
+    color: var(--black-color);
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: normal;
+    transition: all 0.3s linear;
+}
+
+.gen-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-rows: 1fr;
+    gap: 10px;
+    padding: 10px 5px;
+}
+
+.gen{
+    border: none;
+    border-radius: 20px;
+    font-size: 18px;
+    padding: 5px;
+    background: #333;
+    color: var(--white-color);
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: normal;
+    transition: all 0.3s linear;
+}
+
+/*Estilos para los tipos*/
+.normal-type { background-color: #A8A878; color: var(--black-color); }
+.fire-type { background-color: #F08030; color: var(--black-color); }
+.water-type { background-color: #6890F0; color: var(--black-color); }
+.grass-type { background-color: #78C850; color: var(--black-color); }
+.electric-type { background-color: #F8D030; color: var(--black-color); }
+.ice-type { background-color: #98D8D8; color: var(--black-color); }
+.fighting-type { background-color: #C03028; color: var(--black-color); }
+.ground-type { background-color: #E0C068; color: var(--black-color); }
+.flying-type { background-color: #A890F0; color: var(--black-color); }
+.psychic-type { background-color: #F85888; color: var(--black-color); }
+.bug-type { background-color: #A8B820; color: var(--black-color); }
+.rock-type { background-color: #B8A038; color: var(--black-color); }
+.ghost-type { background-color: #705898; color: var(--black-color); }
+.dragon-type { background-color: #7038F8; color: var(--black-color); }
+.dark-type { background-color: #705848; color: var(--black-color); }
+.steel-type { background-color: #B8B8D0; color: var(--black-color); }
+.fairy-type { background-color: #EE99AC; color: var(--black-color); }
+.poison-type { background-color: #A040A0; color: var(--black-color); }
+
+.unselected-type{
+    background: #888;
+    color: var(--white-color);
+    border: 1px solid black;
+    transition: all 0.3s linear;
+}
+
+.unselected-gen{
+    background: #fdfcf8;
+    color: var(--black-color);
+    border: 1px solid black;
+    transition: all 0.3s linear;
+}
+
+
+/*Pokemon-section*/
+
+.pokemon-section{
+    width: 100%;
+    padding-top: 20px;
+}
+
+.pokemon-container{
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.pokemon-card-background{
+    width: 100%;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px 0px;
+}
+
+.pokemon-card{
+    width: 100%;
+    background: #AAAAAA;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.superior-card{
+    width: 100%;
+    display: grid;
+    place-items: center;
+    background: #BBBBBB;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+}
+
+.image-container{
+    width: 50%;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Pokebola-pokeball-png-0.png/640px-Pokebola-pokeball-png-0.png');
+    background-size: 95%; 
+    background-repeat: no-repeat;
+}
+
+.image-container img{
+    width: 100%;
+    height: 100%;
+    scale: 0.80;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+}
+
+.inferior-info-card{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.inferior-info-card .poke-id,
+.inferior-info-card .poke-name{
+    margin: 5px;
+    font-size: 8vw;
+    font-family: "DM Serif Display", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.poke-type{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding-top: 10px;
+    font-size: 4vw;
+
+}
+
+.poke-type span{
+    width: 40%;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    color: var(--black-color);
+    border: 1px solid #eee;
+    font-weight: 500;
+}
+
+.button-container{
+    width: 100%;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+}
+
+.button-info{
+    width: 70%;
+    max-width: 200px;
+    background: var(--black-color);
+    color: var(--white-color);
+    border-radius: 20px;
+    font-size: 5vw;
+    padding: 10px;
+}
+
+
+.return-container{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    left: 5px;
+    opacity: 0;
+    visibility: hidden;
+    animation:  show-button linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 300px 400px;
+}
+
+.return-button{
+    width: 100%;
+    height: 100%;
+    font-size: 30px;
+    transform: rotate(-90deg);
+    border-radius: 50px;
+    color: var(--white-color);
+    background: var(--black-color);
+    border: 1px solid var(--close-background);
+    cursor: pointer;
+}
+
+@keyframes show-button{
+    to{
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/*
+
+BUGS A SOLUCIONAR
+
+
+-El modal y menu lateral no quedan fijos
+
+DISEÑO
+
+-Intentar hacer lo del clip phat invertido
+
+-Probar otros diseños tanto para el acordion como para el menu lateral
+*/
+
