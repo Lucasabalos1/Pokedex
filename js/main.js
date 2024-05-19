@@ -100,6 +100,7 @@ buttons.forEach(button =>{
 
 gens.forEach(gen =>{
     gen.addEventListener("click", () =>{
+        console.log("cambiando estilos al gen")
         gen.classList.toggle("unselected-gen")
     })
 });

@@ -1,0 +1,104 @@
+@media (min-width: 801px) and (max-width: 1100px) {
+    
+    .pokemon-card-background{
+        width: 30%;
+        margin: 10px;
+    }
+
+    .pokemon-card{
+        width: 100%;
+    }
+
+    .inferior-info-card .poke-id,
+    .inferior-info-card .poke-name{
+        font-size: 3vw
+    }
+
+    .poke-type span{
+        font-size: 1.5vw;
+    }
+
+    .button-info{
+        font-size: 1.3vw;
+    }
+}
+
+@media (min-width: 1101px){
+    
+
+    .pokemon-card-background{
+        width: 24%;
+        margin: 5px;
+    }
+
+    .pokemon-card{
+        width: 100%;
+    }
+
+    .inferior-info-card .poke-id,
+    .inferior-info-card .poke-name{
+        font-size: 2.5vw
+    }
+
+    .poke-type span{
+        font-size: 1.3vw;
+    }
+
+    .button-info{
+        font-size: 1.3vw;
+    }
+
+    .gen-container{
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+        padding: 10px;
+    }
+}
+
+@media (min-width: 600px){
+    .btn-menu{
+        display: none;
+    }
+
+    .menu-list-container{
+        display: block;
+    }
+
+    .menu-list{
+        display: flex;
+        list-style: none;
+    }
+
+    .menu-list li{
+        color: #fff;
+        font-size: 22px;
+        font-weight: 600;
+        padding: 20px;
+        cursor: pointer;
+    }
+
+    .menu-list li:hover{
+        border-bottom: 1px solid #777;
+    }
+
+    .types-container{
+        grid-template-columns: repeat(6, 1fr);
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .types{
+        font-size: 16px;
+    }
+
+    .pokemon-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .modal-menu-container{
+        display: none;
+    }
+}

@@ -1,45 +1,36 @@
-/*
-
--Modificar css para que se adapte a tablets
-
-*/
-@media (min-width: 500px) and (max-width: 800px) {
+@media (min-width: 550px) and (max-width: 800px) {
     
-    .btn-menu{
-        display: none;
+    
+    .types{
+        font-size: 14px;
     }
 
-    .menu-list-container{
-        display: block;
-    }
-
-    .menu-list{
+    .pokemon-container{
         display: flex;
-        list-style: none;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .pokemon-card-background{
+        width: 45%;
+        margin: 10px;
     }
 
-    .menu-list li{
-        color: #fff;
-        font-size: 22px;
-        font-weight: 600;
-        padding: 10px;
-        cursor: pointer;
+    .pokemon-card{
+        width: 100%;
+
     }
 
-    .menu-list li:hover{
-        border-bottom: 1px solid #777;
+    .inferior-info-card .poke-id,
+    .inferior-info-card .poke-name{
+        font-size: 4vw
     }
 
+    .poke-type span{
+        font-size: 2.3vw;
+    }
 
-
+    .button-info{
+        font-size: 2vw;
+    }
 }
 
-
-/*
-
--Realizar cambios en el diseño de filtro de busqueda para que se adapte a tablet
-
--Realizar cambios para que en el diseño de mostrar los pokemon aparezcan 2
-
-
-*/
