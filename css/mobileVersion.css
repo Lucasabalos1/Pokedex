@@ -323,14 +323,14 @@ main{
 .fairy-type { background-color: #EE99AC; color: var(--black-color); }
 .poison-type { background-color: #A040A0; color: var(--black-color); }
 
-.unselected-type{
+.selected-type{
     background: #888;
     color: var(--white-color);
     border: 1px solid black;
     transition: all 0.3s linear;
 }
 
-.unselected-gen{
+.selected-gen{
     background: #fdfcf8;
     color: var(--black-color);
     border: 1px solid black;
@@ -485,6 +485,8 @@ DISEÑO
 
 -Intentar hacer lo del clip phat invertido
 
--Probar otros diseños tanto para el acordion como para el menu lateral
+-Probar otros diseños para el menu lateral
+
+-Estilizar footer
 */
 
