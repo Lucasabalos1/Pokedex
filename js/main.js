@@ -10,6 +10,8 @@ const gens = document.querySelectorAll(".gen");
 const returnButton = document.querySelector(".return-button")
 const mainContainer = document.getElementById("main-container")
 
+const inputSearch = document.getElementById("search-poke")
+
 
 // const isMobileDevice = () => {
 //     return /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -92,6 +94,7 @@ document.addEventListener("DOMContentLoaded", stylizeButtons);
 arrowButton.addEventListener("click", toggleAdvanceSearch);
 btnOpenMenu.addEventListener("click", toggleMenu);
 btnCloseMenu.addEventListener("click", toggleMenu);
+
 buttons.forEach(button =>{
     button.addEventListener("click", () =>{
         button.classList.toggle("unselected-type")
@@ -100,7 +103,6 @@ buttons.forEach(button =>{
 
 gens.forEach(gen =>{
     gen.addEventListener("click", () =>{
-        console.log("cambiando estilos al gen")
         gen.classList.toggle("unselected-gen")
     })
 });
@@ -110,19 +112,97 @@ returnButton.addEventListener("click", ()=> {
     mainContainer.scrollIntoView({behavior: "smooth"})
 })
 
+// Filtro por nombre
+inputSearch.addEventListener("input", () =>{
+
+    let getInput = (inputSearch.value).toUpperCase();
+
+    const cards = document.querySelectorAll(".pokemon-card-background");
+
+    cards.forEach((card) => {
+        
+        let pokeName = card.firstElementChild.lastElementChild.children[1].textContent
+        
+        if (!pokeName.includes(getInput)) {
+            card.style.display = "none";
+        }else{
+            card.style.display = "block";
+        }
+
+    });
+});
+
+
+// Filtro por generacion
+
+const genRange = {
+    KANTO: [1,151],
+    JOHTO: [152,251],
+    HOENN: [252,386],
+    SINNOH: [387,493],
+    TESELIA: [494,649],
+    KALOS: [650,721],
+    ALOLA: [722,809],
+    GALAR: [810,905],
+    PALDEA: [906,1025]
+}
+
+const disguiseByRange = (start, end) =>{
+    const cards = document.querySelectorAll(".pokemon-card-background");
+
+    cards.forEach((card) =>{
+        
+        console.log(start)
+        console.log(end)
+        
+        getId = card.firstElementChild.lastElementChild.children[0].innerHTML.substring(1);
+        if ( getId >= start && getId <= end ){ 
+            card.style.display = "none";
+        }
+    });
+} 
+
+const showCard = (start, end) =>{
+    const cards = document.querySelectorAll(".pokemon-card-background");
+
+    cards.forEach((card) =>{
+        
+        console.log(start)
+        console.log(end)
+        
+        getId = card.firstElementChild.lastElementChild.children[0].innerHTML.substring(1);
+        if ( getId >= start && getId <= end ){ 
+            card.style.display = "block";
+        }
+    });
+}
+
+gens.forEach((gen) => {
+    gen.addEventListener("click", () =>{
+        if(gen.classList.contains("unselected-gen")){
+            const getRange = genRange[gen.textContent]
+            disguiseByRange(getRange[0],getRange[1])
+        }else{
+            if (!gen.classList.contains("unselected-gen")) {
+                const getRange = genRange[gen.textContent]
+                showCard(getRange[0],getRange[1])
+            }
+        }
+    });
+});
+
+
+
+
 /*
 
 TO-DO :
 
-
--Crear funcion para filtrado de nombres que se actualice a tiempo real
-
 -Crear funcion para filtrar por tipos
 
--Crear funcion para filtrar por generaciones 
+-Solucionar bug filtro gen cuando se busca un pokemon de una region ocultada con el filtro, este aparece y cuando se borra todo lo del input aparece toda la pokedex
 
-
-
+-Cambiar filtro de generacion, en vez de ocultar, que solo muestre esa region
 CREAR NUEVOS JS PARA:
 
 -Agregar animacion de cuando aparezca en el viewport

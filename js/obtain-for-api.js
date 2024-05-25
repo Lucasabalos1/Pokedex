@@ -7,7 +7,7 @@ const pokemonNamesSet = new Set();
 const obtainData = async (apiUrl) => {
     try {
         let requests = [];
-        for (let i = 1; i <= 151; i++) {
+        for (let i = 1; i <= 1025; i++) {
             requests.push(fetch(apiUrl + i));
         }
 
