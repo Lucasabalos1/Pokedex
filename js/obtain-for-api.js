@@ -2,7 +2,6 @@ const cardsContainer = document.getElementById("pokemon-container");
 
 const apiUrl = "https://pokeapi.co/api/v2/pokemon/";
 
-const pokemonNamesSet = new Set();
 
 const obtainData = async (apiUrl) => {
     try {
@@ -34,7 +33,6 @@ const drawData = (poke) =>{
     
     cardBacKground.classList.add("pokemon-card-background", firstType)
     
-    if(pokemonNamesSet.has(poke.name)) pokemonNamesSet.add(poke.name);
 
     if(poke.name == "mew") console.log("termine")
     if(poke.types.length == 1){

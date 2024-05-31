@@ -4,7 +4,7 @@ const btnOpenMenu = document.getElementById("btn-menu");
 const btnCloseMenu = document.getElementById("btn-close");
 const arrowButton = document.getElementById("arrow-button");
 const advanceSearch = document.querySelector(".inferior-row");
-const buttons = document.querySelectorAll(".types");
+const typeButtons = document.querySelectorAll(".types");
 const gens = document.querySelectorAll(".gen");
 const returnButton = document.querySelector(".return-button")
 const mainContainer = document.getElementById("main-container")
@@ -24,7 +24,7 @@ const toggleAdvanceSearch = () => {
 
 //Funcion que pone color a los botones de tipos dependiendo del tipo
 const stylizeButtons = () =>{
-    buttons.forEach(button => {
+    typeButtons.forEach(button => {
         let tipoSeleccionado = selectType(button.textContent);
         button.classList.add(tipoSeleccionado);
     });
@@ -33,41 +33,41 @@ const stylizeButtons = () =>{
 //Funcion que se le pasa un tipo y devuelve su color 
 const selectType= (tipo) =>{
     switch (tipo) {
-        case "BICHO":
+        case "BUG":
             return "bug-type";
         case "NORMAL":
             return "normal-type";
-        case "FUEGO":
+        case "FIRE":
             return "fire-type";
-        case "AGUA":
+        case "WATER":
             return "water-type";
-        case "PLANTA":
+        case "GRASS":
             return "grass-type";
-        case "ELECTRICO":
+        case "ELECTRIC":
             return "electric-type";
-        case "HIELO":
+        case "ICE":
             return "ice-type";
-        case "LUCHA":
+        case "FIGHTING":
             return "fighting-type";
-        case "TIERRA":
+        case "GROUND":
             return "ground-type";
-        case "VOLADOR":
+        case "FLYING":
             return "flying-type";
-        case "PSIQUICO":
+        case "PSYCHIC":
             return "psychic-type";
-        case "ROCA":
+        case "ROCK":
             return "rock-type";
-        case "FANTASMA":
+        case "GHOST":
             return "ghost-type";
         case "DRAGON":
             return "dragon-type";
-        case "SINIESTRO":
+        case "DARK":
             return "dark-type";
-        case "ACERO":
+        case "STEEL":
             return "steel-type";
-        case "HADA":
+        case "FAIRY":
             return "fairy-type";
-        case "VENENO":
+        case "POISON":
             return "poison-type";
         default:
             return "undefined";
@@ -77,12 +77,12 @@ const selectType= (tipo) =>{
 //funciones que estilizan los botones al darles click
 
 const removeTypeSelected = () =>{
-    buttons.forEach((button) => {
+    typeButtons.forEach((button) => {
         button.classList.remove("selected-type")
     });
 }
 
-buttons.forEach(button =>{
+typeButtons.forEach(button =>{
     button.addEventListener("click", () =>{
         removeTypeSelected();
         button.classList.add("selected-type");
@@ -139,10 +139,7 @@ const genRange = {
 
 const showByGen = (start, end) => {
     const cards = document.querySelectorAll(".pokemon-card-background");
-
-    console.log(start);
-    console.log(end);
-
+    
     cards.forEach((card) => {
         getId = card.firstElementChild.lastElementChild.children[0].innerHTML.substring(1);
 
@@ -159,6 +156,30 @@ gens.forEach((gen) =>{
     });
 });
 
+//Filtro por tipos (pasar a limpio luego)
+
+const showByType = (type) => {
+    const cards = document.querySelectorAll(".pokemon-card-background")
+
+    cards.forEach((card) => {
+        
+        let principalType = card.firstElementChild.lastElementChild.children[2].firstElementChild.innerHTML;  
+        let secondaryType = card.firstElementChild.lastElementChild.children[2].children[1] || "undefined"
+
+        card.style.display = (principalType == type || secondaryType == type) ? "block" : "none";
+    });
+}
+
+
+typeButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        if (button.classList.contains("selected-type")) {
+            showByType(button.innerHTML)
+        }
+    });
+});
+
+
 //eventos iniciales
 document.addEventListener("DOMContentLoaded", stylizeButtons);
 arrowButton.addEventListener("click", toggleAdvanceSearch);
@@ -169,9 +190,10 @@ btnCloseMenu.addEventListener("click", toggleMenu);
 
 TO-DO :
 
--Crear funcion para filtrar por tipos
-
+-optimizar tiempos de carga
 -Agregar animacion de cuando aparezca en el viewport
+
+
 
 */
 
