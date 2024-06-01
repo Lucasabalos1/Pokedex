@@ -27,6 +27,7 @@
     height: 100%;
     background: rgba(20, 20, 20, 0.9);
     overflow-y: auto; /* Permite el scroll dentro del modal */
+    position: relative;
 }
 
 .modal-header-container {
@@ -34,7 +35,7 @@
     height: 100px;
     background: #000;
     clip-path: polygon(0 0, 100% 0, 100% 65%, 40% 65%, 30% 100%, 0 100%);
-    position: relative;
+    position: inherit;
     z-index: 2;
 }
 
@@ -65,6 +66,7 @@
     top: 0;
     right: 0;
     padding: 20px 20px 0 0;
+    z-index: 3;
 }
 
 .cross-container .fa-x {
@@ -228,10 +230,11 @@
     border: 1px solid #fff;
     height: 20px;
     margin: 10px 0;
+    overflow: hidden;
 }
 
 .bar{
-    width: 50%;
+    width: 0%;
     height: 20px;
     background: #FFD700;
     text-align: center;
@@ -242,5 +245,5 @@
 .bar-very-low { background-color: #f31c1c; color:#000 ; }
 .bar-low { background-color: #F08030; color: #000; }
 .bar-medium { background-color: #ffea29; color: #000; }
-.grass-semi-max { background-color: #78C850; color: #000; }
+.bar-semi-max { background-color: #78C850; color: #000; }
 .bar-max{background-color: #277901; color: #000;}
