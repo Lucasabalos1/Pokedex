@@ -190,10 +190,10 @@ btnCloseMenu.addEventListener("click", toggleMenu);
 
 TO-DO :
 
+-pasar a limpio codigo que esta marcado
 -optimizar tiempos de carga
 -Agregar animacion de cuando aparezca en el viewport
-
-
+-crear filtro por favoritos(?)
 
 */
 

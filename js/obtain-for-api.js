@@ -34,13 +34,12 @@ const drawData = (poke) =>{
     cardBacKground.classList.add("pokemon-card-background", firstType)
     
 
-    if(poke.name == "mew") console.log("termine")
     if(poke.types.length == 1){
         cardBacKground.innerHTML = `
         <div class="pokemon-card">
             <div class="superior-card">
                 <div class="image-container">
-                    <img src="${poke.sprites.other["official-artwork"].front_default}" alt="">
+                    <img loading = "lazy" src="${poke.sprites.other["official-artwork"].front_default}" alt="">
                 </div>
             </div>
             <div class="inferior-info-card">
@@ -60,7 +59,7 @@ const drawData = (poke) =>{
         <div class="pokemon-card">
             <div class="superior-card">
                 <div class="image-container">
-                    <img src="${poke.sprites.other["official-artwork"].front_default}" alt="">
+                    <img loading = "lazy" src="${poke.sprites.other["official-artwork"].front_default}" alt="">
                 </div>
             </div>
             <div class="inferior-info-card">
@@ -124,3 +123,5 @@ function obtainType(type) {
 }
 
 document.addEventListener("DOMContentLoaded", obtainData(apiUrl));
+
+/* Para mejorar la perfonmance toca poner solo la primera generacion y que las otras llamadas se hagan cuando se seleccione la region */

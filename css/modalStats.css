@@ -13,7 +13,7 @@
     opacity: 0;
     visibility: hidden;
     transform: translateY(-100%);
-    transition: all 0.5s linear;
+    transition: all 0.4s linear;
 }
 
 .show-stats{
@@ -63,8 +63,8 @@
 
 .cross-container {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 0px;
+    right: 10px;
     padding: 20px 20px 0 0;
     z-index: 3;
 }
@@ -247,3 +247,22 @@
 .bar-medium { background-color: #ffea29; color: #000; }
 .bar-semi-max { background-color: #78C850; color: #000; }
 .bar-max{background-color: #277901; color: #000;}
+
+
+
+@media (min-width: 1050px){
+
+    .modal-poke-name-container .poke-name {
+        font-size: 28px;
+    }
+
+    .poke-container{
+        display: flex;
+    }
+
+    .poke-image-container{
+        display: grid;
+        place-items: center;
+    }
+
+}
