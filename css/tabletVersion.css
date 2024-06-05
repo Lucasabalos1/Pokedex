@@ -22,7 +22,7 @@
 
     .inferior-info-card .poke-id,
     .inferior-info-card .poke-name{
-        font-size: 4vw
+        font-size: 2vw
     }
 
     .poke-type span{
@@ -32,5 +32,8 @@
     .button-info{
         font-size: 2vw;
     }
+
+    
+    
 }
 

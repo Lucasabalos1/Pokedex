@@ -15,6 +15,7 @@ const inputSearch = document.getElementById("search-poke")
 const toggleMenu = () => {
     modal.classList.toggle("visible");
     menuLateral.classList.toggle("show-menu");
+    document.body.style.overflow = (modal.classList.contains("visible")) ? "hidden": "scroll";
 }
 
 // funcion que muestra u oculta la busqueda avanzada

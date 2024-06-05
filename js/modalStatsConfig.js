@@ -6,8 +6,8 @@ const modalStats = document.querySelector(".modal-background");
 
 
 
-const randomNumber = () => {
-    return Math.floor(Math.random() * 50);
+const randomNumber = (moves) => {
+    return Math.floor(Math.random() * parseInt(moves));
 }
 
 //funcion seleccionadora de color de la barra (a pulir mejor)
@@ -113,10 +113,10 @@ const drawModal = (url) => {
                             <div class="moves-container">
                                 <span class="move-title">SOME MOVEMENTS</span>
                                 <ul class="ul_moves">
-                                    <li>${poke.moves[randomNumber()].move.name.toUpperCase()}</li>
-                                    <li>${poke.moves[randomNumber()].move.name.toUpperCase()}</li>
-                                    <li>${poke.moves[randomNumber()].move.name.toUpperCase()}</li>
-                                    <li>${poke.moves[randomNumber()].move.name.toUpperCase()}</li>
+                                    <li>${poke.moves[randomNumber(poke.moves.length)].move.name.toUpperCase()}</li>
+                                    <li>${poke.moves[randomNumber(poke.moves.length)].move.name.toUpperCase()}</li>
+                                    <li>${poke.moves[randomNumber(poke.moves.length)].move.name.toUpperCase()}</li>
+                                    <li>${poke.moves[randomNumber(poke.moves.length)].move.name.toUpperCase()}</li>
                                 </ul>
                             </div>
                         
@@ -220,10 +220,10 @@ const drawModal = (url) => {
                             <div class="moves-container">
                                 <span class="move-title">SOME MOVEMENTS</span>
                                 <ul class="ul_moves">
-                                    <li>${poke.moves[randomNumber()].move.name.toUpperCase()}</li>
-                                    <li>${poke.moves[randomNumber()].move.name.toUpperCase()}</li>
-                                    <li>${poke.moves[randomNumber()].move.name.toUpperCase()}</li>
-                                    <li>${poke.moves[randomNumber()].move.name.toUpperCase()}</li>
+                                    <li>${poke.moves[randomNumber(poke.moves.length)].move.name.toUpperCase()}</li>
+                                    <li>${poke.moves[randomNumber(poke.moves.length)].move.name.toUpperCase()}</li>
+                                    <li>${poke.moves[randomNumber(poke.moves.length)].move.name.toUpperCase()}</li>
+                                    <li>${poke.moves[randomNumber(poke.moves.length)].move.name.toUpperCase()}</li>
                                 </ul>
                             </div>
                         
@@ -298,6 +298,7 @@ document.querySelector(".cross-container").addEventListener("click", () => {
 /*
 -Pasar a limpio las partes marcadas
 
+-Tira error si pokemons solo tienen una habilidad, lo mismo con los movimientos
 -retocar el diseño
 
 - ver si puedo integrar descripcion del pokemon
