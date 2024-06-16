@@ -5,7 +5,7 @@ const btnCloseMenu = document.getElementById("btn-close");
 const arrowButton = document.getElementById("arrow-button");
 const advanceSearch = document.querySelector(".inferior-row");
 const typeButtons = document.querySelectorAll(".types");
-const gens = document.querySelectorAll(".gen");
+// const gens = document.querySelectorAll(".gen");
 const returnButton = document.querySelector(".return-button")
 const mainContainer = document.getElementById("main-container")
 const inputSearch = document.getElementById("search-poke")
@@ -123,41 +123,8 @@ inputSearch.addEventListener("input", () =>{
 });
 
 
-// Filtro por generacion
 
-const genRange = {
-    KANTO: [1,151],
-    JOHTO: [152,251],
-    HOENN: [252,386],
-    SINNOH: [387,493],
-    TESELIA: [494,649],
-    KALOS: [650,721],
-    ALOLA: [722,809],
-    GALAR: [810,905],
-    PALDEA: [906,1025],
-    TODAS: [1,1025]
-}
-
-const showByGen = (start, end) => {
-    const cards = document.querySelectorAll(".pokemon-card-background");
-    
-    cards.forEach((card) => {
-        getId = card.firstElementChild.lastElementChild.children[0].innerHTML.substring(1);
-
-        card.style.display = (getId >= start && getId <= end) ? "block" : "none";
-    });
-}
-
-gens.forEach((gen) =>{
-    gen.addEventListener("click", () =>{
-        if(gen.classList.contains("selected-gen")){
-            const getRange = genRange[gen.textContent];
-            showByGen(getRange[0], getRange[1]);
-        }
-    });
-});
-
-//Filtro por tipos (pasar a limpio luego)
+//Filtro por tipos 
 
 const showByType = (type) => {
     const cards = document.querySelectorAll(".pokemon-card-background")

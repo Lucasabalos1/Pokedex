@@ -315,18 +315,18 @@ main{
 .grass-type { background-color: #78C850; color: var(--black-color); }
 .electric-type { background-color: #F8D030; color: var(--black-color); }
 .ice-type { background-color: #98D8D8; color: var(--black-color); }
-.fighting-type { background-color: #C03028; color: var(--black-color); }
+.fighting-type { background-color: #D63F38; color: var(--black-color); }
 .ground-type { background-color: #E0C068; color: var(--black-color); }
 .flying-type { background-color: #A890F0; color: var(--black-color); }
 .psychic-type { background-color: #F85888; color: var(--black-color); }
 .bug-type { background-color: #A8B820; color: var(--black-color); }
 .rock-type { background-color: #B8A038; color: var(--black-color); }
-.ghost-type { background-color: #705898; color: var(--black-color); }
-.dragon-type { background-color: #7038F8; color: var(--black-color); }
+.ghost-type { background-color: #9F8EBE; color: var(--black-color); }
+.dragon-type { background-color: #A684FA; color: var(--black-color); }
 .dark-type { background-color: #705848; color: var(--black-color); }
 .steel-type { background-color: #B8B8D0; color: var(--black-color); }
 .fairy-type { background-color: #EE99AC; color: var(--black-color); }
-.poison-type { background-color: #A040A0; color: var(--black-color); }
+.poison-type { background-color: #CA7CCA; color: var(--black-color); }
 
 .selected-type{
     background: #888;
@@ -550,4 +550,4 @@ footer{
 
 BUGS A SOLUCIONAR
 
-performance 65
+performance 80

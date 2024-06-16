@@ -1,13 +1,14 @@
 const cardsContainer = document.getElementById("pokemon-container");
+const gens = document.querySelectorAll(".gen");
 
 const apiUrl = "https://pokeapi.co/api/v2/pokemon/";
 
 
-const obtainData = async (apiUrl) => {
+const obtainData = async (apiUrl, start, end) => {
     try {
         let requests = [];
-        for (let i = 1; i <= 151; i++) {
-            requests.push(fetch(apiUrl + i));
+        for (start; start <= end; start++) {
+            requests.push(fetch(apiUrl + start));
         }
 
         let responses = await Promise.all(requests);
@@ -122,6 +123,26 @@ function obtainType(type) {
     }
 }
 
-document.addEventListener("DOMContentLoaded", obtainData(apiUrl));
+const genRange = {
+    KANTO: [1,151],
+    JOHTO: [152,251],
+    HOENN: [252,386],
+    SINNOH: [387,493],
+    TESELIA: [494,649],
+    KALOS: [650,721],
+    ALOLA: [722,809],
+    GALAR: [810,905],
+    PALDEA: [906,1025],
+    TODAS: [1,1025]
+}
 
-/* Para mejorar la perfonmance toca poner solo la primera generacion y que las otras llamadas se hagan cuando se seleccione la region */
+document.addEventListener("DOMContentLoaded", obtainData(apiUrl,1 , 151));
+
+gens.forEach((gen) => {
+    gen.addEventListener("click", () => { 
+        const getRange = genRange[gen.textContent];
+        cardsContainer.innerHTML = "";
+        obtainData(apiUrl, getRange[0], getRange[1]);        
+    });
+});
+
