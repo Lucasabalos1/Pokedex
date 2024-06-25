@@ -5,7 +5,6 @@ const btnCloseMenu = document.getElementById("btn-close");
 const arrowButton = document.getElementById("arrow-button");
 const advanceSearch = document.querySelector(".inferior-row");
 const typeButtons = document.querySelectorAll(".types");
-// const gens = document.querySelectorAll(".gen");
 const returnButton = document.querySelector(".return-button")
 const mainContainer = document.getElementById("main-container")
 const inputSearch = document.getElementById("search-poke")

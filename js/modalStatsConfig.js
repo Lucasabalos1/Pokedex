@@ -4,13 +4,12 @@
 
 const modalStats = document.querySelector(".modal-background");
 
-
-
+//Selecciona un numero random entre el 0 y el largo del array moves
 const randomNumber = (moves) => {
     return Math.floor(Math.random() * parseInt(moves));
 }
 
-//funcion seleccionadora de color de la barra (a pulir mejor)
+//funcion seleccionadora de color de la barra 
 const selectColorBar = (stat) => {
     let paseNumber = parseInt(stat);
     
@@ -29,6 +28,8 @@ const selectColorBar = (stat) => {
     }
 }
 
+
+//Se encarga de estilizar la barra de cada stats
 const modificateBars = (bars) => {
     bars.forEach((bar) => {
         bar.style.width = (bar.innerHTML > 100) ? "100%" : `${bar.innerHTML}%`;
@@ -296,7 +297,6 @@ document.querySelector(".cross-container").addEventListener("click", () => {
 
 
 /*
--Pasar a limpio las partes marcadas
 
 -Tira error si pokemons solo tienen una habilidad, lo mismo con los movimientos
 -retocar el diseño
