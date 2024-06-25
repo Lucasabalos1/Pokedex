@@ -3,7 +3,6 @@ const gens = document.querySelectorAll(".gen");
 
 const apiUrl = "https://pokeapi.co/api/v2/pokemon/";
 
-
 const obtainData = async (apiUrl, start, end) => {
     try {
         let requests = [];
@@ -145,4 +144,3 @@ gens.forEach((gen) => {
         obtainData(apiUrl, getRange[0], getRange[1]);        
     });
 });
-

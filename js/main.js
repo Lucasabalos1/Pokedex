@@ -9,7 +9,6 @@ const returnButton = document.querySelector(".return-button")
 const mainContainer = document.getElementById("main-container")
 const inputSearch = document.getElementById("search-poke")
 
-
 // funcion que muestra u oculta el modal
 const toggleMenu = () => {
     modal.classList.toggle("visible");
@@ -75,7 +74,6 @@ const selectType= (tipo) =>{
 }
 
 //funciones que estilizan los botones al darles click
-
 const removeTypeSelected = () =>{
     typeButtons.forEach((button) => {
         button.classList.remove("selected-type")
@@ -121,8 +119,6 @@ inputSearch.addEventListener("input", () =>{
     });
 });
 
-
-
 //Filtro por tipos 
 
 const showByType = (type) => {
@@ -146,7 +142,6 @@ typeButtons.forEach((button) => {
     });
 });
 
-
 //eventos iniciales
 document.addEventListener("DOMContentLoaded", stylizeButtons);
 arrowButton.addEventListener("click", toggleAdvanceSearch);
@@ -156,11 +151,9 @@ btnCloseMenu.addEventListener("click", toggleMenu);
 /*
 
 TO-DO :
-
 -pasar a limpio codigo que esta marcado
 -optimizar tiempos de carga
 -Agregar animacion de cuando aparezca en el viewport
 -crear filtro por favoritos(?)
-
 */
 
