@@ -28,7 +28,6 @@ const selectColorBar = (stat) => {
     }
 }
 
-
 //Se encarga de estilizar la barra de cada stats
 const modificateBars = (bars) => {
     bars.forEach((bar) => {
@@ -38,28 +37,30 @@ const modificateBars = (bars) => {
     });
 }
 
-setTimeout(() => {
+const inicialitarButtons = () => {
+    setTimeout(() => {
 
-    const moreInfo = document.querySelectorAll(".button-info");
+        const moreInfo = document.querySelectorAll(".button-info");
 
-    
-    moreInfo.forEach((button) => {
-    button.addEventListener("click", () => {
+        moreInfo.forEach((button) => {
+        button.addEventListener("click", () => {
         
-        modalStats.classList.add("show-stats");
-        let getId = button.parentElement.parentElement.children[0].innerHTML.substring(1)
+            modalStats.classList.add("show-stats");
+            let getId = button.parentElement.parentElement.children[0].innerHTML.substring(1)
         
-        drawModal(`https://pokeapi.co/api/v2/pokemon/${getId}`)
+            drawModal(`https://pokeapi.co/api/v2/pokemon/${getId}`)
+        });
     });
-});
-}, 5000);
+    }, 3000);
+}
 
+const drawModal =  async (url) => {
+    
+    let response = await fetch(url);
+    
+    let poke = await response.json();
 
-
-const drawModal = (url) => {
-     let response = fetch(url).then(res => res.json());
      
-     response.then(poke => {
 
         const modalStatContainer = document.createElement("DIV");
 
@@ -284,17 +285,13 @@ const drawModal = (url) => {
         modalStats.appendChild(modalStatContainer);
 
         modificateBars(document.querySelectorAll(".bar"))
-    });
 
 }
-
     
 document.querySelector(".cross-container").addEventListener("click", () => {
      modalStats.classList.remove("show-stats");
      modalStats.removeChild(modalStats.lastElementChild);
  });    
-
-
 
 /*
 
