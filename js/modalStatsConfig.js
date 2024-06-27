@@ -54,6 +54,37 @@ const inicialitarButtons = () => {
     }, 3000);
 }
 
+const getAbilities = (abilities) => {
+    return `
+        <div class="abilities">
+            <span class="abilities-title">ABILITIES</span>
+            <div class="abilities-cont">
+                <span>${abilities[0].ability.name.toUpperCase()}</span>
+                ${abilities.length > 1 ? `<span>${abilities[1].ability.name.toUpperCase()}</span>` : ''}
+            </div>
+        </div>
+    `;
+}; 
+//     if (abilities < 2) {
+//         htmlCode = `<div class="abilities">
+//                         <span class="abilities-title">ABILITIES</span>
+//                         <div class="abilities-cont">
+//                             <span>${poke.abilities[0].ability.name.toUpperCase()}</span>
+//                         </div>
+//                     </div> `;
+//     }else{
+//         htmlCode = `<div class="abilities">
+//                         <span class="abilities-title">ABILITIES</span>
+//                         <div class="abilities-cont">
+//                             <span>${poke.abilities[0].ability.name.toUpperCase()}</span>
+//                             <span>${poke.abilities[1].ability.name.toUpperCase()}</span>
+//                         </div>
+//                     </div> `;
+//     }
+
+//     return htmlCode;
+// }
+
 const drawModal =  async (url) => {
     
     let response = await fetch(url);
@@ -66,18 +97,13 @@ const drawModal =  async (url) => {
 
         modalStatContainer.classList.add("modal-stats-container");
 
-
-        if (poke.types.length == 1) {
-            
-            modalStatContainer.innerHTML = `
-            <div class="modal-header-container">
+        modalStatContainer.innerHTML = `
+        <div class="modal-header-container">
                         
-                <div class="modal-poke-name-container">
-                    <span class="poke-name">${poke.name.toUpperCase()}</span>
-                </div>
-            
-                
-            </div>
+            <div class="modal-poke-name-container">
+                <span class="poke-name">${poke.name.toUpperCase()}</span>
+            </div>        
+        </div>
 
         <div class="modal-main-container">
 
@@ -104,6 +130,7 @@ const drawModal =  async (url) => {
                                 <span class="types-tittle">TYPE</span>
                                 <div class="types-cont">
                                     <span>${poke.types[0].type.name.toUpperCase()}</span>
+                                    ${poke.types.length > 1 ? `<span>${poke.types[1].type.name.toUpperCase()}</span>` : ``}
                                 </div>
                             </div>
 
@@ -126,7 +153,7 @@ const drawModal =  async (url) => {
                                 <span class="abilities-title">ABILITIES</span>
                                 <div class="abilities-cont">
                                     <span>${poke.abilities[0].ability.name.toUpperCase()}</span>
-                                    <span>${poke.abilities[1].ability.name.toUpperCase()}</span>
+                                     ${poke.abilities.length > 1 ? `<span>${poke.abilities[1].ability.name.toUpperCase()}</span>` : ''}
                                 </div>
                             </div> 
 
@@ -173,114 +200,6 @@ const drawModal =  async (url) => {
                 </div>
             </section>
         </div>`
-        }else{
-            
-        modalStatContainer.innerHTML = `
-        <div class="modal-header-container">
-                        
-            <div class="modal-poke-name-container">
-                <span class="poke-name">${poke.name.toUpperCase()}</span>
-            </div>
-            
-            
-        </div>
-
-        <div class="modal-main-container">
-
-            <section class="poke-info-section">
-
-                <div class="poke-container">
-
-                    <div class="poke-image-container">
-                        <div class="image-poke">
-                            <img src="${poke.sprites.other["official-artwork"].front_default}" alt="">
-                        </div>
-                    </div>
-
-                    <section class="poke-data-section">
-                        <div class="poke-info-container">
-
-                            <div class="poke-id-container">
-                                <span class="poke-id">#${poke.id}</span>
-                            </div>
-
-                            <hr>
-
-                            <div class="modal-poke-type">
-                                <span class="types-tittle">TYPES</span>
-                                <div class="types-cont">
-                                    <span>${poke.types[0].type.name.toUpperCase()}</span>
-                                    <span>${poke.types[1].type.name.toUpperCase()}</span>
-                                </div>
-                            </div>
-
-                            <div class="hw-container">
-                            <span class="poke-heigth">HEIGTH: <b> ${poke.height.toString().slice(0, -1) + "," + poke.height.toString().slice(-1)}</b>m </span>
-                            <span class="poke-width">WEIGHT: <b> ${poke.weight.toString().slice(0, -1) + "," + poke.height.toString().slice(-1)}</b>kg</span>
-                            </div>
-
-                            <div class="moves-container">
-                                <span class="move-title">SOME MOVEMENTS</span>
-                                <ul class="ul_moves">
-                                    <li>${poke.moves[randomNumber(poke.moves.length)].move.name.toUpperCase()}</li>
-                                    <li>${poke.moves[randomNumber(poke.moves.length)].move.name.toUpperCase()}</li>
-                                    <li>${poke.moves[randomNumber(poke.moves.length)].move.name.toUpperCase()}</li>
-                                    <li>${poke.moves[randomNumber(poke.moves.length)].move.name.toUpperCase()}</li>
-                                </ul>
-                            </div>
-                        
-                            <div class="abilities">
-                                <span class="abilities-title">ABILITIES</span>
-                                <div class="abilities-cont">
-                                    <span>${poke.abilities[0].ability.name.toUpperCase()}</span>
-                                    <span>${poke.abilities[1].ability.name.toUpperCase()}</span>
-                                </div>
-                            </div> 
-
-                            <div class="base-stats">
-                                <div class="stat-container">
-                                    <span>HP:</span>
-                                    <div class="stat-bar">
-                                        <div class="bar">${poke.stats[0].base_stat}</div>
-                                    </div>
-                                </div>
-                                <div class="stat-container">
-                                    <span>ATTACK:</span>
-                                    <div class="stat-bar">
-                                        <div class="bar">${poke.stats[1].base_stat}</div>
-                                    </div>
-                                </div>
-                                <div class="stat-container">
-                                    <span>DEFENSE:</span>
-                                    <div class="stat-bar">
-                                        <div class="bar">${poke.stats[2].base_stat}</div>
-                                    </div>
-                                </div>
-                                <div class="stat-container">
-                                    <span>SPECIAL ATTACK:</span>
-                                    <div class="stat-bar">
-                                        <div class="bar">${poke.stats[3].base_stat}</div>
-                                    </div>
-                                </div>
-                                <div class="stat-container">
-                                    <span>SPECIAL DEFENSE:</span>
-                                    <div class="stat-bar">
-                                        <div class="bar">${poke.stats[4].base_stat}</div>
-                                    </div>
-                                </div>
-                                <div class="stat-container">
-                                    <span>SPEED:</span>
-                                    <div class="stat-bar">
-                                        <div class="bar">${poke.stats[5].base_stat}</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-            </section>
-        </div>`
-        }
      
         modalStats.appendChild(modalStatContainer);
 
@@ -293,10 +212,3 @@ document.querySelector(".cross-container").addEventListener("click", () => {
      modalStats.removeChild(modalStats.lastElementChild);
  });    
 
-/*
-
--Tira error si pokemons solo tienen una habilidad, lo mismo con los movimientos
--retocar el diseño
-
-- ver si puedo integrar descripcion del pokemon
-*/
