@@ -132,3 +132,4 @@ gens.forEach((gen) => {
 });
 
 //Convertir las imagenes de jpg a webp
+//Utilizar modulos para usar funciones de otros js

@@ -1,7 +1,3 @@
-/* TODO:
-- Crear toda la logica de traer la info 
-*/
-
 const modalStats = document.querySelector(".modal-background");
 
 //Selecciona un numero random entre el 0 y el largo del array moves
@@ -38,8 +34,6 @@ const modificateBars = (bars) => {
 }
 
 const initializeGenButtons = () => {
-    setTimeout(() => {
-
         const moreInfo = document.querySelectorAll(".button-info");
 
         moreInfo.forEach((button) => {
@@ -51,7 +45,6 @@ const initializeGenButtons = () => {
             drawModal(`https://pokeapi.co/api/v2/pokemon/${getId}`)
         });
     });
-    }, 3000);
 }
 
 const drawModal =  async (url) => {
@@ -181,5 +174,4 @@ document.querySelector(".cross-container").addEventListener("click", () => {
      modalStats.removeChild(modalStats.lastElementChild);
  });    
 
-// bug a solucionar: al cambiar de generacion y darle 2 veces a more info se queda con el segundo pokemon y no cambia mas
 // Tambien cuando se habre el modal stat, lo de abajo sigue haciendo scroll.
