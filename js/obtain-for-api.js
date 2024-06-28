@@ -3,6 +3,8 @@ const gens = document.querySelectorAll(".gen");
 
 const apiUrl = "https://pokeapi.co/api/v2/pokemon/";
 
+window.sr = ScrollReveal();
+
 const obtainData = async (apiUrl, start, end) => {
     try {
         let requests = [];
@@ -17,9 +19,15 @@ const obtainData = async (apiUrl, start, end) => {
             drawData(poke);
         });
         
+        sr.reveal(".pokemon-container", {
+            duration: 2500,
+            origin: `top`,
+            distance: `-100px`
+        });
+
         document.querySelector(".preloader").style.display = "none";
         document.querySelector(".main-container").style.display = "block";
-        inicialitarButtons();
+        initializeGenButtons();
     } catch (error) {
         console.log("La api fallo");
     }
@@ -33,49 +41,26 @@ const drawData = (poke) =>{
     
     cardBacKground.classList.add("pokemon-card-background", firstType)
     
-
-    if(poke.types.length == 1){
-        cardBacKground.innerHTML = `
-        <div class="pokemon-card">
-            <div class="superior-card">
-                <div class="image-container">
-                    <img loading = "lazy" src="${poke.sprites.other["official-artwork"].front_default}" alt="">
-                </div>
-            </div>
-            <div class="inferior-info-card">
-                <span class="poke-id">#${poke.id}</span>
-                <span class="poke-name">${poke.name.toUpperCase()}</span>
-                <div class="poke-type">
-                    <span class="${firstType}">${poke.types[0].type.name.toUpperCase()}</span>
-                </div>
-                <div class="button-container">
-                    <button class="button-info">MORE INFO</button>
-                </div>
+    cardBacKground.innerHTML = `
+    <div class="pokemon-card">
+        <div class="superior-card">
+            <div class="image-container">
+                <img loading = "lazy" src="${poke.sprites.other["official-artwork"].front_default}" alt="">
             </div>
         </div>
+        <div class="inferior-info-card">
+            <span class="poke-id">#${poke.id}</span>
+            <span class="poke-name">${poke.name.toUpperCase()}</span>
+            <div class="poke-type">
+                <span class="${firstType}">${poke.types[0].type.name.toUpperCase()}</span>
+                ${poke.types.length > 1 ? `<span>${poke.types[1].type.name.toUpperCase()}</span>` : ``}
+            </div>
+            <div class="button-container">
+                <button class="button-info">MORE INFO</button>
+            </div>
+        </div>
+    </div>
 `
-    }else{
-        cardBacKground.innerHTML = `
-        <div class="pokemon-card">
-            <div class="superior-card">
-                <div class="image-container">
-                    <img loading = "lazy" src="${poke.sprites.other["official-artwork"].front_default}" alt="">
-                </div>
-            </div>
-            <div class="inferior-info-card">
-                <span class="poke-id">#${poke.id}</span>
-                <span class="poke-name">${poke.name.toUpperCase()}</span>
-                <div class="poke-type">
-                    <span class="${firstType}">${poke.types[0].type.name.toUpperCase()}</span>
-                    <span class="${secondType}">${poke.types[1].type.name.toUpperCase()}</span>
-                </div>
-                <div class="button-container">
-                    <button class="button-info">MORE INFO</button>
-                </div>
-            </div>
-        </div>
-`  
-    }
     cardsContainer.appendChild(cardBacKground);
 } 
 
@@ -142,6 +127,6 @@ gens.forEach((gen) => {
         const getRange = genRange[gen.textContent];
         cardsContainer.innerHTML = "";
         obtainData(apiUrl, getRange[0], getRange[1]);
-        inicialitarButtons();
+        initializeGenButtons();
     });
 });

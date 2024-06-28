@@ -80,6 +80,22 @@ const removeTypeSelected = () =>{
     });
 }
 
+const initializeAnimations = () =>{
+    window.sr = ScrollReveal();
+
+    sr.reveal("header", {
+        duration: 1500,
+        origin: `bottom`,
+        distance: `-100px`
+    });
+
+    sr.reveal(".acordion", {
+        duration: 1000,
+        origin: `rigth`,
+        distance: `-200px`
+    });
+}
+
 typeButtons.forEach(button =>{
     button.addEventListener("click", () =>{
         removeTypeSelected();
@@ -142,18 +158,11 @@ typeButtons.forEach((button) => {
     });
 });
 
+
 //eventos iniciales
 document.addEventListener("DOMContentLoaded", stylizeButtons);
+document.addEventListener("DOMContentLoaded", initializeAnimations)
 arrowButton.addEventListener("click", toggleAdvanceSearch);
 btnOpenMenu.addEventListener("click", toggleMenu);
 btnCloseMenu.addEventListener("click", toggleMenu);
-
-/*
-
-TO-DO :
--pasar a limpio codigo que esta marcado
--optimizar tiempos de carga
--Agregar animacion de cuando aparezca en el viewport
--crear filtro por favoritos(?)
-*/
 

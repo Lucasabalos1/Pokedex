@@ -37,7 +37,7 @@ const modificateBars = (bars) => {
     });
 }
 
-const inicialitarButtons = () => {
+const initializeGenButtons = () => {
     setTimeout(() => {
 
         const moreInfo = document.querySelectorAll(".button-info");
@@ -53,37 +53,6 @@ const inicialitarButtons = () => {
     });
     }, 3000);
 }
-
-const getAbilities = (abilities) => {
-    return `
-        <div class="abilities">
-            <span class="abilities-title">ABILITIES</span>
-            <div class="abilities-cont">
-                <span>${abilities[0].ability.name.toUpperCase()}</span>
-                ${abilities.length > 1 ? `<span>${abilities[1].ability.name.toUpperCase()}</span>` : ''}
-            </div>
-        </div>
-    `;
-}; 
-//     if (abilities < 2) {
-//         htmlCode = `<div class="abilities">
-//                         <span class="abilities-title">ABILITIES</span>
-//                         <div class="abilities-cont">
-//                             <span>${poke.abilities[0].ability.name.toUpperCase()}</span>
-//                         </div>
-//                     </div> `;
-//     }else{
-//         htmlCode = `<div class="abilities">
-//                         <span class="abilities-title">ABILITIES</span>
-//                         <div class="abilities-cont">
-//                             <span>${poke.abilities[0].ability.name.toUpperCase()}</span>
-//                             <span>${poke.abilities[1].ability.name.toUpperCase()}</span>
-//                         </div>
-//                     </div> `;
-//     }
-
-//     return htmlCode;
-// }
 
 const drawModal =  async (url) => {
     
@@ -212,3 +181,4 @@ document.querySelector(".cross-container").addEventListener("click", () => {
      modalStats.removeChild(modalStats.lastElementChild);
  });    
 
+// bug a solucionar: al cambiar de generacion y darle 2 veces a more info se queda con el segundo pokemon y no cambia mas

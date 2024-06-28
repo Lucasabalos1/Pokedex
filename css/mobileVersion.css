@@ -26,7 +26,6 @@ body{
 header{
     width: 100%;
     background: var(--black-color);
-    /* background: linear-gradient(180deg, rgba(245,0,0,1) 14%, rgba(138,26,19,1) 69%); */
 }
 
 nav{
@@ -361,6 +360,7 @@ main{
     border-radius: 20px;
     padding: 10px;
     margin: 10px 0px;
+    border: 1px solid #000;
 }
 
 .pokemon-card{
@@ -368,6 +368,8 @@ main{
     background: #AAAAAA;
     border-radius: 20px;
     padding: 10px;
+    border: 1px solid #fff;
+
 }
 
 .superior-card{
