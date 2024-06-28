@@ -45,7 +45,7 @@ const drawData = (poke) =>{
     <div class="pokemon-card">
         <div class="superior-card">
             <div class="image-container">
-                <img loading = "lazy" src="${poke.sprites.other["official-artwork"].front_default}" alt="">
+                <img loading = "lazy" src="${poke.sprites.other["official-artwork"].front_default}" alt="pokemon">
             </div>
         </div>
         <div class="inferior-info-card">
@@ -53,7 +53,7 @@ const drawData = (poke) =>{
             <span class="poke-name">${poke.name.toUpperCase()}</span>
             <div class="poke-type">
                 <span class="${firstType}">${poke.types[0].type.name.toUpperCase()}</span>
-                ${poke.types.length > 1 ? `<span>${poke.types[1].type.name.toUpperCase()}</span>` : ``}
+                ${poke.types.length > 1 ? `<span class="${secondType}">${poke.types[1].type.name.toUpperCase()}</span>` : ``}
             </div>
             <div class="button-container">
                 <button class="button-info">MORE INFO</button>
@@ -130,3 +130,5 @@ gens.forEach((gen) => {
         initializeGenButtons();
     });
 });
+
+//Convertir las imagenes de jpg a webp

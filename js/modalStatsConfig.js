@@ -182,3 +182,4 @@ document.querySelector(".cross-container").addEventListener("click", () => {
  });    
 
 // bug a solucionar: al cambiar de generacion y darle 2 veces a more info se queda con el segundo pokemon y no cambia mas
+// Tambien cuando se habre el modal stat, lo de abajo sigue haciendo scroll.
