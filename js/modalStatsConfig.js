@@ -173,6 +173,7 @@ const drawModal =  async (url) => {
     
 document.querySelector(".cross-container").addEventListener("click", () => {
      modalStats.classList.remove("show-stats");
+     document.body.style.overflow = (modalStats.classList.contains("show-stats")) ? "hidden": "scroll";
      modalStats.removeChild(modalStats.lastElementChild);
  });    
 

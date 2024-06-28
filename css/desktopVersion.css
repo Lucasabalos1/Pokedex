@@ -1,3 +1,26 @@
+/* Estilización de la barra de desplazamiento */
+body {
+    scrollbar-width: auto; /* Anchura automática de la barra de desplazamiento */
+}
+
+/* Estilos específicos para navegadores WebKit (Chrome, Safari) */
+body::-webkit-scrollbar {
+    width: 12px; /* Ancho de la barra de desplazamiento */
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #fff; /* Color del fondo de la barra de desplazamiento */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #940000; /* Color del botón de la barra de desplazamiento */
+    border-radius: 10px; /* Radio de borde del botón de la barra de desplazamiento */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #990000; /* Color del botón de la barra de desplazamiento al pasar el mouse */
+}
+
 @media (min-width: 801px) and (max-width: 1100px) {
     
     .pokemon-card-background{

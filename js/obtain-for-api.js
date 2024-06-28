@@ -130,5 +130,3 @@ gens.forEach((gen) => {
         initializeGenButtons();
     });
 });
-
-//Convertir las imagenes de jpg a webp
