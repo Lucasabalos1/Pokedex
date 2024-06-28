@@ -1,7 +1,3 @@
-/* Estilización de la barra de desplazamiento */
-body {
-    scrollbar-width: auto; /* Anchura automática de la barra de desplazamiento */
-}
 
 /* Estilos específicos para navegadores WebKit (Chrome, Safari) */
 body::-webkit-scrollbar {
