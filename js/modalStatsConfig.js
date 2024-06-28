@@ -40,9 +40,11 @@ const initializeGenButtons = () => {
         button.addEventListener("click", () => {
         
             modalStats.classList.add("show-stats");
+            document.body.style.overflow = (modalStats.classList.contains("show-stats")) ? "hidden": "scroll";
+
             let getId = button.parentElement.parentElement.children[0].innerHTML.substring(1)
-        
             drawModal(`https://pokeapi.co/api/v2/pokemon/${getId}`)
+
         });
     });
 }
@@ -174,4 +176,3 @@ document.querySelector(".cross-container").addEventListener("click", () => {
      modalStats.removeChild(modalStats.lastElementChild);
  });    
 
-// Tambien cuando se habre el modal stat, lo de abajo sigue haciendo scroll.

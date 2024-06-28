@@ -5,9 +5,9 @@ const btnCloseMenu = document.getElementById("btn-close");
 const arrowButton = document.getElementById("arrow-button");
 const advanceSearch = document.querySelector(".inferior-row");
 const typeButtons = document.querySelectorAll(".types");
-const returnButton = document.querySelector(".return-button")
-const mainContainer = document.getElementById("main-container")
-const inputSearch = document.getElementById("search-poke")
+const returnButton = document.querySelector(".return-button");
+const mainContainer = document.getElementById("main-container");
+const inputSearch = document.getElementById("search-poke");
 
 // funcion que muestra u oculta el modal
 const toggleMenu = () => {
@@ -76,7 +76,7 @@ const selectType= (tipo) =>{
 //funciones que estilizan los botones al darles click
 const removeTypeSelected = () =>{
     typeButtons.forEach((button) => {
-        button.classList.remove("selected-type")
+        button.classList.remove("selected-type");
     });
 }
 
@@ -112,13 +112,14 @@ const removeGenSelected = () =>{
 gens.forEach(gen =>{
     gen.addEventListener("click", () =>{
         removeGenSelected();
-        gen.classList.add("selected-gen") 
+        gen.classList.add("selected-gen");
+        removeTypeSelected();
     })
 });
 
 // funcion para el boton que te devuelve al principio de la pagina con una animacion
 returnButton.addEventListener("click", ()=> {
-    mainContainer.scrollIntoView({behavior: "smooth"})
+    mainContainer.scrollIntoView({behavior: "smooth"});
 })
 
 // Filtro por nombre
@@ -129,7 +130,7 @@ inputSearch.addEventListener("input", () =>{
     const cards = document.querySelectorAll(".pokemon-card-background");
 
     cards.forEach((card) => { 
-        let pokeName = card.firstElementChild.lastElementChild.children[1].textContent
+        let pokeName = card.firstElementChild.lastElementChild.children[1].textContent;
         
         card.style.display = pokeName.includes(getInput) ? "block" : "none";
     });
@@ -138,12 +139,12 @@ inputSearch.addEventListener("input", () =>{
 //Filtro por tipos 
 
 const showByType = (type) => {
-    const cards = document.querySelectorAll(".pokemon-card-background")
+    const cards = document.querySelectorAll(".pokemon-card-background");
 
     cards.forEach((card) => {
         
         let principalType = card.firstElementChild.lastElementChild.children[2].firstElementChild.innerHTML;  
-        let secondaryType = card.firstElementChild.lastElementChild.children[2].children[1] || "undefined"
+        let secondaryType = card.firstElementChild.lastElementChild.children[2].children[1] || "undefined";
 
         card.style.display = (principalType == type || secondaryType == type) ? "block" : "none";
     });
@@ -153,7 +154,7 @@ const showByType = (type) => {
 typeButtons.forEach((button) => {
     button.addEventListener("click", () => {
         if (button.classList.contains("selected-type")) {
-            showByType(button.innerHTML)
+            showByType(button.innerHTML);
         }
     });
 });
@@ -161,7 +162,7 @@ typeButtons.forEach((button) => {
 
 //eventos iniciales
 document.addEventListener("DOMContentLoaded", stylizeButtons);
-document.addEventListener("DOMContentLoaded", initializeAnimations)
+document.addEventListener("DOMContentLoaded", initializeAnimations);
 arrowButton.addEventListener("click", toggleAdvanceSearch);
 btnOpenMenu.addEventListener("click", toggleMenu);
 btnCloseMenu.addEventListener("click", toggleMenu);
