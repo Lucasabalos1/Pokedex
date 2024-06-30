@@ -12,6 +12,22 @@ const toggleMenu = () => {
     document.body.style.overflow = (modal.classList.contains("visible")) ? "hidden": "scroll";
 }
 
+const initializeAnimations = () =>{
+    window.sr = ScrollReveal();
+
+    sr.reveal("header", {
+        duration: 1000,
+        origin: `bottom`,
+        distance: `-100px`
+    });
+
+    sr.reveal(".principal-info-container", {
+        duration: 2000,
+        origin: `top`,
+        distance: `-200px`
+    });
+}
 
 btnOpenMenu.addEventListener("click", toggleMenu);
 btnCloseMenu.addEventListener("click", toggleMenu);
+document.addEventListener("DOMContentLoaded", initializeAnimations);
