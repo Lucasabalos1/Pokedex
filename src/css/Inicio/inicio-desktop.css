@@ -49,11 +49,10 @@
         width: 60%;
     }
 
-    .random-pokemon-section{
-        
-    }
+   
     .random-pokemon-container{
         display: flex;
+        margin-bottom: 200px;
     }
 
     .pokemon-image-container{
