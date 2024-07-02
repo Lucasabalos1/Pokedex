@@ -109,19 +109,27 @@ nav{
     list-style: none;
 }
 
-.menu-list-resp li{
-    padding: 10px; 
-    margin-bottom: 10px; 
-    background: transparent; 
-    border-radius: 5px; 
+.menu-list-resp li {
+    padding: 10px;
+    margin-bottom: 10px;
+    background: transparent;
+    border-radius: 5px;
     font-size: 32px;
     font-family: "DM Serif Display", serif;
     font-weight: 400;
     font-style: normal;
-    color:var(--white-color);
+    color: var(--white-color);
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: rgba(0, 0, 0, 0.5);
-      
+}
+
+.menu-list-resp li a {
+    text-decoration: none; 
+    color: var(--white-color); 
+    display: block; 
+    padding: 10px; 
+    border-radius: 5px; 
+
 }
 
 .visible{
@@ -281,7 +289,7 @@ main{
     background: #ff5757;
     font-size: 20px;
     padding: 8px 10px;
-    border-radius: 20px;
+    border-radius: 15px;
     border: 1px solid var(--white-color);
     color: var(--white-color);
     transition: .3s linear;
@@ -298,7 +306,7 @@ main{
 .contact-button {
     font-size: 20px;
     padding: 8px 10px;
-    border-radius: 20px;
+    border-radius: 15px;
     background: transparent;
     color: var(--close-background);
     border: 1px solid var(--white-color);
@@ -398,8 +406,6 @@ main{
 
 .info-pokemon-container{
     width: 100%;
-    display: grid;
-    place-items: start;
     margin-top: 20px;
     padding: 10px;
 }
@@ -504,6 +510,14 @@ footer{
     font-weight: 700;
     padding: 0 20px;
     margin-bottom: 5px;
+}
+
+.ul_pages-list li a{
+    text-decoration: none; 
+    color: var(--white-color); 
+    display: block; 
+    padding: 10px; 
+    border-radius: 5px;
 }
 
 .ul_pages-list li:hover{

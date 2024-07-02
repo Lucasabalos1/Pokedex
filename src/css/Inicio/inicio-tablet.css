@@ -1,0 +1,28 @@
+@media (min-width: 550px) and (max-width: 800px) {
+    .buttons-container{
+        justify-content: space-evenly;
+    }   
+
+    .pokedex-button{
+        font-size: 28px;
+    }
+
+    .contact-button{
+        font-size: 28px;
+    }
+
+    .pokedex-logo-search{
+        width: 70%;
+    }
+
+    .info-pokemon-container{
+        text-align: center  ;
+    }
+    .pokemon-image-container{
+        width: 50%;
+    }
+    
+    .ul_pages-list li a {
+        font-size: 20px;
+    }
+}

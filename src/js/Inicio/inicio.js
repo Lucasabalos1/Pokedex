@@ -34,7 +34,8 @@ const initializeAnimations = () =>{
     sr.reveal(".random-pokemon-section", {
         duration: 1500,
         origin: "rigth",
-        distance: "-100px"
+        distance: "-100px",
+        reset: true
     });
 }
 
@@ -77,10 +78,12 @@ const generateRandomPokemon = async () => {
 }
 
 document.querySelector(".return-button").addEventListener("click", ()=> {
-    document.querySelector(".main-container").scrollIntoView({behavior: "smooth"});
+    document.querySelector("header").scrollIntoView({behavior: "smooth"});
 })
 
 btnOpenMenu.addEventListener("click", toggleMenu);
 btnCloseMenu.addEventListener("click", toggleMenu);
 document.addEventListener("DOMContentLoaded", initializeAnimations);
 document.addEventListener("DOMContentLoaded", generateRandomPokemon);
+
+//Falta agregar la funcionalidad de que al buscar un pokemon se valla para pokedex

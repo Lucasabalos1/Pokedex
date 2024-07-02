@@ -1,0 +1,139 @@
+@media (min-width: 800px) {
+
+    .principal-info-section{
+        margin: 100px 0;
+    }
+    .principal-info-container{
+        display: flex;
+    }
+
+    .pokedex-image-container{
+        order: 2;
+        height: 400px;
+        flex-basis: 40%;
+        animation: 10s float infinite linear;
+    }
+
+    .info-container{
+        order: 1;
+        flex-basis: 60%;
+    }
+
+    
+    .info-container h1{
+        font-size: 56px;
+    }
+
+    .info-container p{
+        font-size: 18px;
+        line-height: 25px ;
+    }
+
+    .pokedex-image-container img:first-child{
+        width: 200px;
+    }
+
+    .buttons-container{
+        justify-content: space-evenly;
+    }
+
+    .pokedex-button{
+        font-size: 28px;
+    }
+
+    .contact-button{
+        font-size: 28px;
+    }
+
+    .pokedex-logo-search{
+        width: 60%;
+    }
+
+    .random-pokemon-section{
+        
+    }
+    .random-pokemon-container{
+        display: flex;
+    }
+
+    .pokemon-image-container{
+        width: 60%;
+    }
+
+    .info-pokemon-section{
+        display: grid;
+        place-items: center;
+    }
+    .info-pokemon-container{ 
+        width: 50%;
+    }
+    .poke-name-container{
+        text-align: start;
+    }
+
+
+
+
+
+
+
+    @keyframes float {
+        0%{
+            transform: translateY(0px)
+        }
+
+        25%{
+            transform: translateY(-15px);
+        }
+
+        50%{
+            transform: translateY(0px);
+        }
+
+        75%{
+            transform: translateY(15px);
+        }
+
+        100%{
+            transform: translateY(0px);
+        }
+    }
+}
+
+@media (min-width: 550px) {
+    .btn-menu{
+        display: none;
+    }
+
+    .menu-list-container{
+        display: block;
+    }
+
+    .menu-list{
+        display: flex;
+        list-style: none;
+    }
+
+    .menu-list li{
+        color: #fff;
+        font-size: 22px;
+        font-weight: 600;
+        padding: 20px;
+        cursor: pointer;
+    }
+
+    .menu-list li a{
+        text-decoration: none; 
+        color: var(--white-color); 
+        display: block; 
+        border-radius: 5px;
+    }
+
+    .menu-list li:hover{
+        border-bottom: 1px solid #777;
+    }
+
+    .modal-menu-container{
+        display: none;
+    }
+}
