@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <meta name="description" content="Pokedex by Lucas Abalos" />
+    <link rel="stylesheet" href="../css/Contact/contact-mobile.css" />
+    <link rel="stylesheet" href="../css/Contact/" />
+    <link rel="stylesheet" href="../css/Contact/" />
+    <script
+      src="https://kit.fontawesome.com/c82c5bef31.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/Inicio/scrollreveal.js"></script>
+  </head>
+  <body>
+    <!--Header Start-->
+
+    <header>
+      <nav>
+        <div class="nav-row">
+          <div class="logo-container">
+            <img
+              src="../Image/Pokédex_logo.png"
+              width="200px"
+              height="70px"
+              alt="logo-pagina"
+            />
+          </div>
+
+          <!--Mobile Header Version-->
+
+          <div class="btn-menu" id="btn-menu">
+            <label for="btn-menu" class="fa-solid fa-bars"></label>
+          </div>
+
+          <!--End Mobile Header Version-->
+
+          <div class="menu-list-container">
+            <ul class="menu-list">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../Html/main.html">Pokedex</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!--Header End-->
+
+    <!--Main-->
+
+    <main>
+      <div class="main-container">
+        <section class="form-section">
+            <div class="form-container">
+              <form id="form">
+
+                <div class="name-container">
+                  <label for="name-container">Name*</label>
+                  <input type="text" name="name" id="name_input">
+                </div>
+
+                <div class="email-container">
+                  <label for="email-container">Email*</label>
+                  <input type="email" name="email" id="email_input">
+                </div>
+
+                <div class="message-container">
+                  <label for="message-container">Message*</label>
+                  <input type="text" name="message" id="message_input">
+                </div>
+
+                <input type="submit" id="send-button" value="send-mail">
+              </form>
+            </div>
+        </section>
+
+        <div class="return-container">
+          <button class="return-button">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <section class="footer-section">
+        <div class="footer-container">
+          <div class="logo-footer-container">
+            <img src="../Image/Pokédex_logo.png" alt="" />
+          </div>
+
+          <div class="menu-footer-container">
+            <ul class="ul_pages-list">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../Html/main.html">Pokedex</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <hr />
+
+          <div class="copy-container">
+            <span class="warning"
+              >Pagina creada con fines de aprendizaje sin fines de lucro</span
+            >
+            <span class="copy"
+              >© 2024 Pokémon. © 1995 - 2024 Nintendo/Creatures Inc./GAMEFREAK
+              Inc. TM, © Nintendo.</span
+            >
+          </div>
+        </div>
+      </section>
+    </footer>
+
+    <div class="modal-menu-container" id="modal-menu-container">
+      <div class="info-menu-container">
+        <div class="btn-close" id="btn-close">
+          <label for="cross-container" class="fa-solid fa-x"></label>
+        </div>
+        <ul class="menu-list-resp">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../Html/main.html">Pokedex</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="return-container">
+      <button class="return-button">
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+
+    <script src="../js/Contact/Contact.js"></script>
+  </body>
+</html>
