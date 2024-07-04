@@ -2,17 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Document</title>
-    <meta name="description" content="Pokedex by Lucas Abalos" />
-    <link rel="stylesheet" href="../css/Contact/contact-mobile.css" />
-    <link rel="stylesheet" href="../css/Contact/" />
-    <link rel="stylesheet" href="../css/Contact/" />
-    <script
-      src="https://kit.fontawesome.com/c82c5bef31.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="js/Inicio/scrollreveal.js"></script>
+    <meta name="description" content="Pokedex by Lucas Abalos"/>
+    <link rel="stylesheet" href="../css/Contact/contact-mobile.css"/>
+    <!-- <link rel="stylesheet" href="../css/Contact/"/>
+    <link rel="stylesheet" href="../css/Contact/"/> -->
+    <script src="https://kit.fontawesome.com/c82c5bef31.js" crossorigin="anonymous"></script>
+    <script src="../js/Global/scrollreveal.js"></script>
   </head>
   <body>
     <!--Header Start-->
@@ -58,21 +55,24 @@
               <form id="form">
 
                 <div class="name-container">
-                  <label for="name-container">Name*</label>
-                  <input type="text" name="name" id="name_input">
+                  <label for="name-container">Name complete<b>*</b></label>
+                  <input type="text" name="name" id="name_input" placeholder="Ingrese su nombre">
                 </div>
 
                 <div class="email-container">
-                  <label for="email-container">Email*</label>
-                  <input type="email" name="email" id="email_input">
+                  <label for="email-container">Email<b>*</b></label>
+                  <input type="email" name="email" id="email_input" placeholder="Ingrese su mail">
                 </div>
 
                 <div class="message-container">
-                  <label for="message-container">Message*</label>
-                  <input type="text" name="message" id="message_input">
+                  <label for="message-container">Message<b>*</b></label>
+                  <textarea name="messageArea" id="message_input" rows="6" cols="30" placeholder="Redacte su mensaje"></textarea>
                 </div>
 
-                <input type="submit" id="send-button" value="send-mail">
+                <div class="button-container">
+                  <input type="submit" id="send-button" value="SEND-MAIL">
+                </div>
+
               </form>
             </div>
         </section>
@@ -100,7 +100,7 @@
             </ul>
           </div>
 
-          <hr />
+          <hr/>
 
           <div class="copy-container">
             <span class="warning"
@@ -129,7 +129,7 @@
     </div>
 
     <div class="return-container">
-      <button class="return-button">
+      <button class="return-button" id="return-button">
         <i class="fa-solid fa-arrow-right"></i>
       </button>
     </div>
@@ -137,3 +137,5 @@
     <script src="../js/Contact/Contact.js"></script>
   </body>
 </html>
+
+<!-- Falta agregar version tablet y desktop -->

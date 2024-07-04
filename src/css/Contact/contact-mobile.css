@@ -159,7 +159,7 @@ nav{
     visibility: hidden;
     animation:  show-button linear both;
     animation-timeline: scroll(root block);
-    animation-range: 200px 300px;
+    animation-range: 100px 200px;
 }
 
 .return-button{
@@ -194,34 +194,90 @@ main{
 }
 
 
-.form-section{
+.form-section {
     width: 100%;
     margin: 100px 0;
 }
 
-.form-container{
+.form-container {
     width: 100%;
     display: grid;
     place-items: center;
     padding: 20px 10px;
-    background: rgba(218, 218, 218, 0.7);
+    background: rgba(218, 218, 218, 0.9);
     border-radius: 10px;
     border: 1px solid #efefef;
 }
 
 .name-container,
 .email-container,
-.message-container{
-    padding: 20px;
+.message-container {
+    width: 100%;
+    max-width: 500px; 
+    padding: 30px 15px;
     display: flex;
     flex-direction: column;
 }
 
+label {
+    font-size: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 300;
+}
 
+label b {
+    font-size: 1rem;
+    color: #fe0000;
+}
 
+#name_input,
+#email_input{
+    width: 100%;
+    padding: 8px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    transition: .5s all linear;
+}
 
+#message_input{
+    width: 100%;
+    padding: 5px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: .5s all linear;
+    resize: none;
+}
 
+#name_input:focus,
+#email_input:focus,
+#message_input:focus{
+    background: #dcdcdc;
+    border-color: #020202;
+    outline: none;
+}
 
+.button-container{
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#send-button{
+    padding: 10px;
+    color: #dadada;
+    background: #000000;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    
+}
+
+#send-button:hover{
+    color: #333333;
+    background: #fff;
+    border: 1px solid #ccc;
+}
 /*Footer*/
 
 footer{
