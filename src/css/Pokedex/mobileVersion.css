@@ -123,6 +123,14 @@ nav{
       
 }
 
+.menu-list-resp li a{
+    text-decoration: none; 
+    color: var(--white-color); 
+    display: block; 
+    padding: 10px; 
+    border-radius: 5px;
+}
+
 
 
 .visible{
@@ -524,6 +532,14 @@ footer{
     font-weight: 700;
     padding: 0 20px;
     margin-bottom: 5px;
+}
+
+.ul_pages-list li a{
+    text-decoration: none; 
+    color: var(--white-color); 
+    display: block; 
+    padding: 10px; 
+    border-radius: 5px;
 }
 
 .ul_pages-list li:hover{

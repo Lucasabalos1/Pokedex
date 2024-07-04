@@ -201,6 +201,7 @@ main{
 
 .form-container {
     width: 100%;
+    min-width: 200px;
     display: grid;
     place-items: center;
     padding: 20px 10px;
@@ -264,6 +265,7 @@ label b {
 }
 
 #send-button{
+    width: 50%;
     padding: 10px;
     color: #dadada;
     background: #000000;
