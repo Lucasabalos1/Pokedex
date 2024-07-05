@@ -86,4 +86,4 @@ btnCloseMenu.addEventListener("click", toggleMenu);
 document.addEventListener("DOMContentLoaded", initializeAnimations);
 document.addEventListener("DOMContentLoaded", generateRandomPokemon);
 
-//Falta agregar la funcionalidad de que al buscar un pokemon se valla para pokedex
+//Falta agregar la funcionalidad de que al buscar un pokemon abajo salgan los datos 

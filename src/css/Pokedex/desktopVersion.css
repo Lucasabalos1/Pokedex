@@ -40,6 +40,10 @@ body::-webkit-scrollbar-thumb:hover {
     .button-info{
         font-size: 1.3vw;
     }
+
+    .ul_pages-list li a{
+        font-size: 28px;
+    }
 }
 
 @media (min-width: 1101px){
@@ -71,6 +75,10 @@ body::-webkit-scrollbar-thumb:hover {
         grid-template-columns: repeat(5, 1fr);
         gap: 10px;
         padding: 10px;
+    }
+
+    .ul_pages-list li a{
+        font-size: 32px;
     }
 }
 

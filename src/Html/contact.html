@@ -7,12 +7,14 @@
     <meta name="description" content="Pokedex by Lucas Abalos"/>
     <link rel="stylesheet" href="../css/Contact/contact-mobile.css"/>
     <link rel="stylesheet" href="../css/Contact/contact-tablet-desktop.css"/>
+    <link rel="shortcut icon" href="../Image/Poké_Ball_icon.svg.png" />
     <script src="https://kit.fontawesome.com/c82c5bef31.js" crossorigin="anonymous"></script>
     <script src="../js/Global/scrollreveal.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">emailjs.init('niTGv4uNgg2305CH5')</script>
   </head>
   <body>
     <!--Header Start-->
-
     <header>
       <nav>
         <div class="nav-row">
@@ -35,9 +37,9 @@
 
           <div class="menu-list-container">
             <ul class="menu-list">
-              <li><a href="../index.html">Home</a></li>
+              <li><a href="../index.html">Inicio</a></li>
               <li><a href="../Html/main.html">Pokedex</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="contact.html">Contacto</a></li>
             </ul>
           </div>
         </div>
@@ -54,22 +56,22 @@
               <form id="form">
 
                 <div class="name-container">
-                  <label for="name-container">Name complete<b>*</b></label>
-                  <input type="text" name="name" id="name_input" placeholder="Ingrese su nombre">
+                  <label for="name-container">Nombre completo<b>*</b></label>
+                  <input type="text" name="from_name" id="name_input" placeholder="Ingrese su nombre" minlength="3" maxlength="48">
                 </div>
 
                 <div class="email-container">
                   <label for="email-container">Email<b>*</b></label>
-                  <input type="email" name="email" id="email_input" placeholder="Ingrese su mail">
+                  <input type="email" name="email_id" id="email_input" placeholder="Ingrese su mail" minlength="12" maxlength="48">
                 </div>
 
                 <div class="message-container">
-                  <label for="message-container">Message<b>*</b></label>
-                  <textarea name="messageArea" id="message_input" rows="6" cols="30" placeholder="Redacte su mensaje"></textarea>
+                  <label for="message-container">Mensaje<b>*</b></label>
+                  <textarea name="message" id="message_input" rows="6" cols="30" placeholder="Redacte su mensaje" minlength="20"></textarea>
                 </div>
 
                 <div class="button-container">
-                  <input type="submit" id="send-button" value="SEND-MAIL">
+                  <input type="submit" id="send-button" value="ENVIAR EMAIL">
                 </div>
 
               </form>
@@ -94,9 +96,9 @@
 
           <div class="menu-footer-container">
             <ul class="ul_pages-list">
-              <li><a href="../index.html">Home</a></li>
+              <li><a href="../index.html">Inicio</a></li>
               <li><a href="../Html/main.html">Pokedex</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="contact.html">Contacto</a></li>
             </ul>
           </div>
 
@@ -121,9 +123,9 @@
           <label for="cross-container" class="fa-solid fa-x"></label>
         </div>
         <ul class="menu-list-resp">
-          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html">Inicio</a></li>
           <li><a href="../Html/main.html">Pokedex</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">Contacto</a></li>
         </ul>
       </div>
     </div>
