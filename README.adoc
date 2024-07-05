@@ -58,6 +58,10 @@ Luego esta la pagina de contacto en donde el usuario puede rellenar un formulari
 
 ==== Archivo index
 
-- index.html
+===== index.html`
 
-test
+El `index.html` vendria a ser la pagina principal del sistema, en esta el usuario podra navegar por diferentes secciones
+La primera seccion es un header, desde ahi el usuario podra ingresar tanto a la pagina de la pokedex como a la de contacto
+La segunda seccion en una pequeña descripcion en donde explica un poco sobre la pokedex y el universo pokemon, en dicha seccion hay otros 2 botones que te llevan a la pokedex o al contacto
+
+
