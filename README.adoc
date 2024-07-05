@@ -7,3 +7,57 @@ v1, {docdate}.
 :tabsize: 4
 
 == Introduccion
+
+El proyecta presenta un conjunto de pagina sobre una pokedex funcional en donde  el
+usuario navegara en la pagina en donde puede obtener los datos de los pokemons que el quiera ya sea por tipo, generacion o nombre
+
+- El menu de inicio contiene los siguientes archivos:
+
+* `index.html`
+* `inicio-mobile.css`
+* `inicio-desktop.css`
+* `inicio-tablet.css`
+* `inicio.js`
+* `libreria ScrollReveal.js`
+
+- La pokedex cuenta con los siguientes archivos:
+
+* `pokedex.html`
+* `mobileVersion.css`
+* `desktopVersion.css`
+* `tabletVersion.css`
+* `modalStats.css`
+* `main.js`
+* `obtainForApi.js`
+* `modalStatsConfig.js`
+* `libreria ScrollReveal.js`
+
+- El formulario de contacto cuenta con los siguientes archivos:
+
+* `pokedex.html`
+* `mobileVersion.css`
+* `desktopVersion.css`
+* `contact-tablet-Desktop.css`
+* `contact-mobile.css`
+* `contact.js`
+* `libreria ScrollReveal.js`
+* `libreria EmailJS.js`
+
+El sistema cuenta con 3 paginas las cuales se dividen las siguientes funcionalidades
+
+La primera es el home, el usuario navegara en una pagina de inicio en donde desde ahi podra
+hacer una busqueda rapida o ir directamente a la pokedex o al formulario de contacto.
+
+En la seccion de la pokedex el usuario puede realizar la busqueda de cualquiera de los 1025 pokemons existentes y obtener sus datos mas relevantes.
+
+Luego esta la pagina de contacto en donde el usuario puede rellenar un formulario para contactarse con el programador via mail
+
+== Implementación
+
+=== Menu home
+
+==== Archivo index
+
+- index.html
+
+test
