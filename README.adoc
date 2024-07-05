@@ -1,3 +1,9 @@
-PRACTICA: LLAMADA A UNA API
+= Proyecto pokedex
+Lucas Abalos <lukotas100@gmail.com>;
+v1, {docdate}. 
+:title-page:
+:numbered:
+:source-highlighter: coderay
+:tabsize: 4
 
-INTRODUCCION
+== Introduccion
