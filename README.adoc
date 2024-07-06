@@ -56,12 +56,34 @@ Luego esta la pagina de contacto en donde el usuario puede rellenar un formulari
 
 === Menu home
 
-==== Archivo index
+==== index.html
 
-===== index.html
+El `index.html` vendria a ser la pagina principal del sistema, en esta el usuario podra navegar por diferentes secciones.
+La primera seccion es un header, desde ahi el usuario podra ingresar tanto a la pagina de la pokedex como a la de contacto.
+La segunda seccion en una pequeña descripcion en donde explica un poco sobre la pokedex y el universo pokemon, en dicha seccion hay otros 2 botones que te llevan a la pokedex o al contacto.
+La tercera seccion cuenta con un buscardor rapido de pokemons, en donde el usuario debera de ingresar el nombre de un pokemon valido para que luego le muestre datos basicos.
+La cuarta seccion cuenta con la generacion de un pokemon random y unos datos basicos.
+Por ultimo cuenta con un footer en donde tambien nos muestran unos datos basicos como en el header.
 
-El `index.html` vendria a ser la pagina principal del sistema, en esta el usuario podra navegar por diferentes secciones
-La primera seccion es un header, desde ahi el usuario podra ingresar tanto a la pagina de la pokedex como a la de contacto
-La segunda seccion en una pequeña descripcion en donde explica un poco sobre la pokedex y el universo pokemon, en dicha seccion hay otros 2 botones que te llevan a la pokedex o al contacto
+==== inicio-mobile.css
 
+`inicio-mobile.css` se encarga de estilizar toda la parte mobile de  el html mencionado anteriormente.
 
+==== `inicio-tablet.css`
+
+`inicio-tablet.css` se encarga de estilizar toda la parte para tablets para que se pueda adaptar la pagina a esos dispositivos.
+
+==== `inicio-desktop.css`
+
+`inicio-desktop.css` se encarga de estilizar la pagina para adaptarla a pc.
+
+==== `ScrollReveal.js`
+
+`ScrollReveal.js` Es una libreria de javascript que se encarga de dar animaciones cuando una seccion entra en el viewport.
+
+==== `inicio.js`
+
+`inicio.js` es el archivo javascript que se encarga de manejar toda la logica de la pagina.
+A continuacion paso a dar explicacion de todas las funciones
+
+-test
