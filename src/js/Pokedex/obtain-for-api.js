@@ -120,8 +120,6 @@ const genRange = {
     TODAS: [1,1025]
 }
 
-document.addEventListener("DOMContentLoaded", obtainData(apiUrl,1 , 151));
-
 gens.forEach((gen) => {
     gen.addEventListener("click", () => { 
         const getRange = genRange[gen.textContent];
@@ -130,3 +128,5 @@ gens.forEach((gen) => {
         initializeGenButtons();
     });
 });
+
+document.addEventListener("DOMContentLoaded", obtainData(apiUrl,1 , 151));

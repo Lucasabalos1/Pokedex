@@ -40,8 +40,7 @@ const initializeAnimations = () =>{
 }
 
 const generateRandomNumber = () =>{
-    return Math.floor(Math.random() * 1025);
-}
+    return Math.floor(Math.random() * 1025) + 1;}
 
 const generatePokemon = async (numberRandom) => {
     try{
@@ -68,7 +67,6 @@ const generatePokemon = async (numberRandom) => {
                             <span class="second-type">${poke.types.length > 1 ? `<span>${poke.types[1].type.name.toUpperCase()}</span>` : ``}</span>
                         </div>
                         <div class="h-container">
-
                             <span class="poke-heigth">HEIGTH: ${poke.height >= 10 ? `<b>${poke.height.toString().slice(0, -1) + "." + poke.height.toString().slice(-1)}M</b>` : `<b>${poke.height.toString().slice(0, -1) + "0." + poke.height.toString().slice(-1)}M</b>`}</span>
                         </div>
                         <div class="w-container">

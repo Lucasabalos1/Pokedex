@@ -9,19 +9,16 @@ const returnButton = document.querySelector(".return-button");
 const mainContainer = document.getElementById("main-container");
 const inputSearch = document.getElementById("search-poke");
 
-// funcion que muestra u oculta el modal
 const toggleMenu = () => {
     modal.classList.toggle("visible");
     menuLateral.classList.toggle("show-menu");
     document.body.style.overflow = (modal.classList.contains("visible")) ? "hidden": "scroll";
 }
 
-// funcion que muestra u oculta la busqueda avanzada
 const toggleAdvanceSearch = () => {
     advanceSearch.classList.toggle("show");
 }
 
-//Funcion que pone color a los botones de tipos dependiendo del tipo
 const stylizeButtons = () =>{
     typeButtons.forEach(button => {
         let tipoSeleccionado = selectType(button.textContent);
@@ -29,7 +26,6 @@ const stylizeButtons = () =>{
     });
 }
 
-//Funcion que se le pasa un tipo y devuelve su color 
 const selectType= (tipo) =>{
     switch (tipo) {
         case "BUG":
@@ -73,28 +69,12 @@ const selectType= (tipo) =>{
     }
 }
 
-//funciones que estilizan los botones al darles click
 const removeTypeSelected = () =>{
     typeButtons.forEach((button) => {
         button.classList.remove("selected-type");
     });
 }
 
-const initializeAnimations = () =>{
-    window.sr = ScrollReveal();
-
-    sr.reveal("header", {
-        duration: 1500,
-        origin: `bottom`,
-        distance: `-100px`
-    });
-
-    sr.reveal(".acordion", {
-        duration: 1000,
-        origin: `rigth`,
-        distance: `-200px`
-    });
-}
 
 typeButtons.forEach(button =>{
     button.addEventListener("click", () =>{
@@ -117,12 +97,26 @@ gens.forEach(gen =>{
     })
 });
 
-// funcion para el boton que te devuelve al principio de la pagina con una animacion
+const initializeAnimations = () =>{
+    window.sr = ScrollReveal();
+
+    sr.reveal("header", {
+        duration: 1500,
+        origin: `bottom`,
+        distance: `-100px`
+    });
+
+    sr.reveal(".acordion", {
+        duration: 1000,
+        origin: `rigth`,
+        distance: `-200px`
+    });
+}
+
 returnButton.addEventListener("click", ()=> {
     mainContainer.scrollIntoView({behavior: "smooth"});
 })
 
-// Filtro por nombre
 inputSearch.addEventListener("input", () =>{
 
     let getInput = (inputSearch.value).toUpperCase();
@@ -136,7 +130,6 @@ inputSearch.addEventListener("input", () =>{
     });
 });
 
-//Filtro por tipos 
 
 const showByType = (type) => {
     const cards = document.querySelectorAll(".pokemon-card-background");
@@ -160,7 +153,6 @@ typeButtons.forEach((button) => {
 });
 
 
-//eventos iniciales
 document.addEventListener("DOMContentLoaded", stylizeButtons);
 document.addEventListener("DOMContentLoaded", initializeAnimations);
 arrowButton.addEventListener("click", toggleAdvanceSearch);

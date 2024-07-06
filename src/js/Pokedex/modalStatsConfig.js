@@ -1,11 +1,9 @@
 const modalStats = document.querySelector(".modal-background");
 
-//Selecciona un numero random entre el 0 y el largo del array moves
 const randomNumber = (moves) => {
     return Math.floor(Math.random() * parseInt(moves));
 }
 
-//funcion seleccionadora de color de la barra 
 const selectColorBar = (stat) => {
     let paseNumber = parseInt(stat);
     
@@ -24,7 +22,6 @@ const selectColorBar = (stat) => {
     }
 }
 
-//Se encarga de estilizar la barra de cada stats
 const modificateBars = (bars) => {
     bars.forEach((bar) => {
         bar.style.width = (bar.innerHTML > 100) ? "100%" : `${bar.innerHTML}%`;
@@ -54,8 +51,6 @@ const drawModal =  async (url) => {
     let response = await fetch(url);
     
     let poke = await response.json();
-
-     
 
         const modalStatContainer = document.createElement("DIV");
 
@@ -99,8 +94,8 @@ const drawModal =  async (url) => {
                             </div>
 
                             <div class="hw-container">
-                                <span class="poke-heigth">HEIGTH: <b> ${poke.height.toString().slice(0, -1) + "," + poke.height.toString().slice(-1)}</b> m </span>
-                                <span class="poke-width">WEIGHT: <b> ${poke.weight.toString().slice(0, -1) + "," + poke.height.toString().slice(-1)}</b> kg</span>
+                                <span class="poke-heigth">HEIGTH: ${poke.height >= 10 ? `<b>${poke.height.toString().slice(0, -1) + "." + poke.height.toString().slice(-1)}M</b>` : `<b>${poke.height.toString().slice(0, -1) + "0." + poke.height.toString().slice(-1)}M</b>`}</span>
+                                <span class="poke-width">WEIGHT: ${poke.weight >= 10 ? `<b>${poke.weight.toString().slice(0, -1) + "." + poke.weight.toString().slice(-1)}KG</b>` : `<b>${poke.weight.toString().slice(0, -1) + "0." + poke.weight.toString().slice(-1)}KG</b>`}</span>
                             </div>
 
                             <div class="moves-container">
