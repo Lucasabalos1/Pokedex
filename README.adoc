@@ -71,8 +71,7 @@ Por ultimo cuenta con un footer en donde tambien nos muestran unos datos basicos
 
 ==== `inicio-tablet.css`
 
-`inicio-tablet.css` se encarga de estilizar toda la parte para tablets para que se pueda adaptar la pagina a esos dispositivos.
-
+`inicio-tablet.css` se encarga de estilizar la pagina para adaptarla a tablets.
 ==== `inicio-desktop.css`
 
 `inicio-desktop.css` se encarga de estilizar la pagina para adaptarla a pc.
@@ -84,35 +83,89 @@ Por ultimo cuenta con un footer en donde tambien nos muestran unos datos basicos
 ==== `inicio.js`
 
 `inicio.js` es el archivo javascript que se encarga de manejar toda la logica de la pagina.
-A continuacion paso a dar explicacion de todas las funciones
+A continuacion paso a dar explicacion de todas las funciones.
 
-- Variables: Primero declaramos un par de variables, esta seran las siguientes 
+- Variables: Primero declaramos un par de variables, esta seran las siguientes:
 
-* modal = Obtenemos el modal en donde estara ubicado el menu lateral en la version mobile
-* menuLateral = Obtenemos el menu lateral que se desplegara en la version mobile 
-* btnOpenMenu = Obtenemos el boton que dara paso a abrir tanto el modal, como el menu lateral 
-* btnCloseMenu = Obtenemos el boton para cerrar el menu lateral y el modal
-* container = Obtenemos el contenedor en donde se va a insertar el pokemon random
-* searchButton = Obtenemos el boton de busqueda del input de la busqueda rapida
+* modal = Obtenemos el modal en donde estara ubicado el menu lateral en la version mobile.
+* menuLateral = Obtenemos el menu lateral que se desplegara en la version mobile. 
+* btnOpenMenu = Obtenemos el boton que dara paso a abrir tanto el modal, como el menu lateral.
+* btnCloseMenu = Obtenemos el boton para cerrar el menu lateral y el modal.
+* container = Obtenemos el contenedor en donde se va a insertar el pokemon random.
+* searchButton = Obtenemos el boton de busqueda del input de la busqueda rapida.
 
--toggleMenu() = Esta funcion se encarga de mostrar u ocultar el modal y menu lateral, dependiendo el estado este agrega o quita claaes al modal y menu lateral, 
-por ultimo tambien oculta el scroll cuando dicho modal este abierto
+- toggleMenu() = Esta funcion se encarga de mostrar u ocultar el modal y menu lateral, dependiendo el estado este agrega o quita claaes al modal y menu lateral, 
+por ultimo tambien oculta el scroll cuando dicho modal este abierto.
 
 - initializeAnimations() = Esta funcion se encarga de inicializar las animaciones que se hacen con la libreria ScrollReveal, dichas animaciones se aplican para
 el header, para la informacion principal que se muestra a la hora de mostrar la pagina, para el contenedor de la busqueda rapida y 
-tambien para el contenedor del pokemon random
+tambien para el contenedor del pokemon random.
 
-- generateRandomNumber() = Se utiliza para generar un numero del 1 al 1025
+- generateRandomNumber() = Se utiliza para generar un numero del 1 al 1025.
 
-- generatePokemon(numberRandom int) = Es una funcion asincronica que recibe un numero random que viene a ser la id del pokemon y este genera su tarjeta de informacion basica, dicha tarjeta se dibuja dentro del container
+- generatePokemon(numberRandom int) = Es una funcion asincronica que recibe un numero random que viene a ser la id del pokemon y este genera su tarjeta de informacion basica, dicha tarjeta se dibuja dentro del container.
 
-- document.querySelector(".return-button").addEventListener("click", ()=> {}) = Este evento lo que hace es que al tocar el boton con la flecha para arriba este te manda para el header con una animacion suave
+- document.querySelector(".return-button").addEventListener("click", ()=> {}) = Este evento lo que hace es que al tocar el boton con la flecha para arriba este te manda para el header con una animacion suave.
 
 - searchButton.addEventListener("click", () => {}) = Este evento se activa al tocar el boton de busqueda rapida, lo que hace es obtener el input y luego pasarselo como parametro a `generatePokemon()` para que este dibuje el pokemon
-que se le paso para que luego se realice un scroll suave hacia abajo mostrando el pokemon buscado pero con un timeout de 100mls por que si no, no se activa
+que se le paso para que luego se realice un scroll suave hacia abajo mostrando el pokemon buscado pero con un timeout de 100mls por que si no, no se activa.
 
-- btnOpenMenu.addEventListener("click", toggleMenu) y btnCloseMenu.addEventListener("click", toggleMenu) = Inicializa los eventos para mostrar y ocultar el modal con los botones btnOpenMenu y btnCloseMenu
+- btnOpenMenu.addEventListener("click", toggleMenu) y btnCloseMenu.addEventListener("click", toggleMenu) = Inicializa los eventos para mostrar y ocultar el modal con los botones btnOpenMenu y btnCloseMenu.
 
-- document.addEventListener("DOMContentLoaded", initializeAnimations) = Luego que se cargue el DOOM, se ejecuta la funcion initializeAnimations
+- document.addEventListener("DOMContentLoaded", initializeAnimations) = Luego que se cargue el DOOM, se ejecuta la funcion initializeAnimations.
 
-- document.addEventListener("DOMContentLoaded", generatePokemon(generateRandomNumber())) = Luego de que se cargue el DOOM, se ejecuta la funcione generatePokemon(generateRandomNumber())
+- document.addEventListener("DOMContentLoaded", generatePokemon(generateRandomNumber())) = Luego de que se cargue el DOOM, se ejecuta la funcione generatePokemon(generateRandomNumber()).
+
+=== Formulario contacto
+
+==== contact.html
+
+- El `contact.html` es la pagina del formulario de contacto, esta pagina esta dividida en secciones distinta que cumplen una funcionalidad distinta.
+La primera seccion es un header, desde ahi el usuario podra ingresar tanto a la pagina de la pokedex como a la de contacto.
+La segunda seccion es la que contiene el formulario, dicho formulario pide el nombre del usuario, su mail y su contacto para luego con un boton enviar el mensaje.
+Por ultimo cuenta con un footer en donde tambien nos muestran unos datos basicos como en el header.
+
+==== contact-mobile.css
+
+`contact-mobile.css` Se encarga de estilizar toda la parte de los estilos para que la pagina se adapte a dispositivos moviles.
+
+==== contact-tablet-Desktop.css
+
+`contact-tablet-Desktop.css` Se encarga de estilizar la pagina para que se adapte a tablets y a pc.
+
+==== `ScrollReveal.js`
+
+`ScrollReveal.js` Es una libreria de javascript que se encarga de dar animaciones cuando una seccion entra en el viewport.
+
+==== `emailJS.js`
+
+`emailJS.js` Es una libreria de javascript que se encarga de enviar mails, esto se debe configurar en la pagina de la libreria para poder usarlo
+
+==== Contact.js`
+
+`Contact.js` es eñ archivo que se encarga de mover toda la logica de la pagina de contacto.
+A continuacion paso a dar explicacion de todas las funciones.
+
+- Variables: Primero declaramos un par de variables, esta seran las siguientes:
+
+* modal = Obtenemos el modal en donde estara ubicado el menu lateral en la version mobile.
+* menuLateral = Obtenemos el menu lateral que se desplegara en la version mobile. 
+* btnOpenMenu = Obtenemos el boton que dara paso a abrir tanto el modal, como el menu lateral.
+* btnCloseMenu = Obtenemos el boton para cerrar el menu lateral y el modal.
+* returnBtn = Obtenemos el boton el cual sirve para volver a la parte superior de la pagina con una animacion.
+* formBtn = Obtenemos el boton para enviar el formulario.
+
+- toggleMenu() = Esta funcion se encarga de mostrar u ocultar el modal y menu lateral, dependiendo el estado este agrega o quita claaes al modal y menu lateral, 
+por ultimo tambien oculta el scroll cuando dicho modal este abierto.
+
+- initializeAnimations() = Esta funcion se encarga de inicializar las animaciones que se hacen con la libreria ScrollReveal, dichas animaciones se aplican para
+el header, para la informacion principal que se muestra a la hora de mostrar la pagina, para el contenedor de la busqueda rapida y 
+tambien para el contenedor del pokemon random.
+
+- returButton.addEventListener("click", ()=> {}) = Este evento se encarga que al hacer click  en el boton con la flecha para arriba este te manda para el header con una animacion suave.
+
+- verifYMail() = se encarga de verificar si el mail del input, cumple con los dominios aceptados por la pagina
+
+document.getElementById("form").addEventListener("submit", (event) => {}) = Este evento se encarga de que una vez dado al boton submir, este utiliza la libreria `emailJS.js`, 
+antes verifica si el mail existe, si no tira una alerta y sale de la funcion. Si cumple, con el metodo sendForm envia un mail con los datos y estructura creada previamente con
+los templates pre configurados.
