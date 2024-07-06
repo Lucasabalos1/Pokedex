@@ -27,7 +27,7 @@ usuario navegara en la pagina en donde puede obtener los datos de los pokemons q
 * `desktopVersion.css`
 * `tabletVersion.css`
 * `modalStats.css`
-* `main.js`
+* `pokedex.js`
 * `obtainForApi.js`
 * `modalStatsConfig.js`
 * `libreria ScrollReveal.js`
@@ -50,13 +50,29 @@ hacer una busqueda rapida o ir directamente a la pokedex o al formulario de cont
 
 En la seccion de la pokedex el usuario puede realizar la busqueda de cualquiera de los 1025 pokemons existentes y obtener sus datos mas relevantes.
 
-Luego esta la pagina de contacto en donde el usuario puede rellenar un formulario para contactarse con el programador via mail
+Luego esta la pagina de contacto en donde el usuario puede rellenar un formulario para contactarse con el programador via mail.
+
+Dicho sistema utiliza la PokeApi, una API publica en donde se puede obtener todos los datos de todos los pokemons que excisten hasta la fecha.
 
 == Implementación
 
+=== Librerias javascript
+
+==== `ScrollReveal.js`
+
+`ScrollReveal.js` Es una libreria de javascript que se encarga de dar animaciones cuando una seccion entra en el viewport.
+
+==== `emailJS.js`
+
+`emailJS.js` Es una libreria de javascript que se encarga de enviar mails, esto se debe configurar en la pagina de la libreria para poder usarlo
+
+=== Partes de html en todos los archivos .html
+
+En todos los html contaran con la seccion del modal y el menu lateral que sirve para la version mobile, tambien contara con una seccion en donde estara un boton para volver a la parte superior de la pagina.
+
 === Menu home
 
-==== index.html
+==== `index.html`
 
 El `index.html` vendria a ser la pagina principal del sistema, en esta el usuario podra navegar por diferentes secciones.
 La primera seccion es un header, desde ahi el usuario podra ingresar tanto a la pagina de la pokedex como a la de contacto.
@@ -65,20 +81,17 @@ La tercera seccion cuenta con un buscardor rapido de pokemons, en donde el usuar
 La cuarta seccion cuenta con la generacion de un pokemon random y unos datos basicos.
 Por ultimo cuenta con un footer en donde tambien nos muestran unos datos basicos como en el header.
 
-==== inicio-mobile.css
+==== `inicio-mobile.css`
 
 `inicio-mobile.css` se encarga de estilizar toda la parte mobile de  el html mencionado anteriormente.
 
 ==== `inicio-tablet.css`
 
 `inicio-tablet.css` se encarga de estilizar la pagina para adaptarla a tablets.
-==== `inicio-desktop.css`
+
+==== `inicio-desktop.css``
 
 `inicio-desktop.css` se encarga de estilizar la pagina para adaptarla a pc.
-
-==== `ScrollReveal.js`
-
-`ScrollReveal.js` Es una libreria de javascript que se encarga de dar animaciones cuando una seccion entra en el viewport.
 
 ==== `inicio.js`
 
@@ -94,56 +107,164 @@ A continuacion paso a dar explicacion de todas las funciones.
 * container = Obtenemos el contenedor en donde se va a insertar el pokemon random.
 * searchButton = Obtenemos el boton de busqueda del input de la busqueda rapida.
 
-- toggleMenu() = Esta funcion se encarga de mostrar u ocultar el modal y menu lateral, dependiendo el estado este agrega o quita claaes al modal y menu lateral, 
+- `toggleMenu()` = Esta funcion se encarga de mostrar u ocultar el modal y menu lateral, dependiendo el estado este agrega o quita claaes al modal y menu lateral, 
 por ultimo tambien oculta el scroll cuando dicho modal este abierto.
 
-- initializeAnimations() = Esta funcion se encarga de inicializar las animaciones que se hacen con la libreria ScrollReveal, dichas animaciones se aplican para
+- `initializeAnimations()` = Esta funcion se encarga de inicializar las animaciones que se hacen con la libreria ScrollReveal, dichas animaciones se aplican para
 el header, para la informacion principal que se muestra a la hora de mostrar la pagina, para el contenedor de la busqueda rapida y 
 tambien para el contenedor del pokemon random.
 
-- generateRandomNumber() = Se utiliza para generar un numero del 1 al 1025.
+- `generateRandomNumber()` = Se utiliza para generar un numero del 1 al 1025.
 
-- generatePokemon(numberRandom int) = Es una funcion asincronica que recibe un numero random que viene a ser la id del pokemon y este genera su tarjeta de informacion basica, dicha tarjeta se dibuja dentro del container.
+- `generatePokemon(numberRandom int)` = Es una funcion asincronica que recibe un numero random que viene a ser la id del pokemon y este genera su tarjeta de informacion basica, dicha tarjeta se dibuja dentro del container.
 
-- document.querySelector(".return-button").addEventListener("click", ()=> {}) = Este evento lo que hace es que al tocar el boton con la flecha para arriba este te manda para el header con una animacion suave.
+- `document.querySelector(".return-button").addEventListener("click", ()=> {})` = Este evento lo que hace es que al tocar el boton con la flecha para arriba este te manda para el header con una animacion suave.
 
-- searchButton.addEventListener("click", () => {}) = Este evento se activa al tocar el boton de busqueda rapida, lo que hace es obtener el input y luego pasarselo como parametro a `generatePokemon()` para que este dibuje el pokemon
+- `searchButton.addEventListener("click", () => {})` = Este evento se activa al tocar el boton de busqueda rapida, lo que hace es obtener el input y luego pasarselo como parametro a `generatePokemon()` para que este dibuje el pokemon
 que se le paso para que luego se realice un scroll suave hacia abajo mostrando el pokemon buscado pero con un timeout de 100mls por que si no, no se activa.
 
-- btnOpenMenu.addEventListener("click", toggleMenu) y btnCloseMenu.addEventListener("click", toggleMenu) = Inicializa los eventos para mostrar y ocultar el modal con los botones btnOpenMenu y btnCloseMenu.
+- `btnOpenMenu.addEventListener("click", toggleMenu) y btnCloseMenu.addEventListener("click", toggleMenu)` = Inicializa los eventos para mostrar y ocultar el modal con los botones btnOpenMenu y btnCloseMenu.
 
-- document.addEventListener("DOMContentLoaded", initializeAnimations) = Luego que se cargue el DOOM, se ejecuta la funcion initializeAnimations.
+- `document.addEventListener("DOMContentLoaded", initializeAnimations)` = Luego que se cargue el DOOM, se ejecuta la funcion initializeAnimations.
 
-- document.addEventListener("DOMContentLoaded", generatePokemon(generateRandomNumber())) = Luego de que se cargue el DOOM, se ejecuta la funcione generatePokemon(generateRandomNumber()).
+- `document.addEventListener("DOMContentLoaded", generatePokemon(generateRandomNumber()))` = Luego de que se cargue el DOOM, se ejecuta la funcione generatePokemon(generateRandomNumber()).
+
+==== Pokedex
+
+==== `pokedex.html`
+
+El `pokedex.html` vendria a ser la pagina principal del sistema, en esta el usuario podra navegar por diferentes secciones.
+La primera seccion es un header, desde ahi el usuario podra ingresar tanto a la pagina de la pokedex como a la de contacto.
+La segunda es un filtro en donde el usuario podra filtrar los pokemons ya sea por region, tipo y nombre.
+La tercera seccion es la que contiene a todos los pokemons cargados, segun lo que el usuario desee buscar, en dicha seccion cada tarjeta tiene un boton donde se mostrara mas informacion del pokemon.
+La cuarta es la seccion del modal del pokemon seleccionado, en esta nos mostrara todas las estadisticas principales del pokemon.
+La quinta es la seccion del footer en donde el usuario tambien podra navegar por distintas secciones del sistema.
+Por ultimo se cuenta con la seccion preloader, la cual se quitara luego de que se hagan las llamadas de la api.
+
+==== `mobileVersion.css`
+
+`mobileVersion.css` se encarga de estilizar la pagina para que se adapte a dispositivos moviles
+
+==== `desktopVersion.css`
+
+`desktopVersion.css` se encarga de estilizar la pagina para que se adapte a pc
+
+==== `tabletVersion.css`
+
+`tabletVersion.css` se encarga de estilizar la pagina para que se adapte a tablets
+
+=== `modalStats.css`
+
+`modalStats.css` se encarga de estilizar el modal donde se muestra las estadisticas de los pokemons adaptandolo para mobile, tablet y pc
+
+==== `pokedex.js`
+
+`pokedex.js` es el archivo que se encarga de mover gran parte de la logica de la pagina de la pokedex.
+A continuacion paso a dar explicacion de todas las funciones.
+
+- Variables: Primero declaramos un par de variables, esta seran las siguientes:
+
+* modal = Obtenemos el modal en donde estara ubicado el menu lateral en la version mobile.
+* menuLateral = Obtenemos el menu lateral que se desplegara en la version mobile. 
+* btnOpenMenu = Obtenemos el boton que dara paso a abrir tanto el modal, como el menu lateral.
+* btnCloseMenu = Obtenemos el boton para cerrar el menu lateral y el modal.
+* returnBtn = Obtenemos el boton el cual sirve para volver a la parte superior de la pagina con una animacion.
+* arrowButton = Obtenemos el boton para abrir el acordion para la busqueda avanzada.
+* advanceSearch = Obtenemos la seccion donde esta estructurada la busqueda avanzada para luego mostrarla
+* typeButtons = Obtenemos los botones de todos los tipos de pokemon
+* mainContainer = Obtenemos el contenedor del main para utilozarla en el returnButton
+* inputSearch = obtenemos el input de la busqueda avanzada
+
+- `toggleMenu()` = Esta funcion se encarga de mostrar u ocultar el modal y menu lateral, dependiendo el estado este agrega o quita claaes al modal y menu lateral, 
+por ultimo tambien oculta el scroll cuando dicho modal este abierto.
+
+- `toggleAdvanceSearch()` = Esta funcion se encarga de aplicar la clase show para mostrar el menu de la busqueda avanzada.
+
+- `stylizeButtons()` = Se encarga de estilizar los botones de todos los tipos de pokemon agregandole la clase correspondiente.
+
+- `selectType(tipo)` = Se encarga de devolver el nombre de una clase, dependiendo el nombre del tipo que se le pase, se utiliza en la funcion anterior.
+
+- `removeTypeSelected()` = Remueve el color de un boton si este esta seleccionado
+
+- `typeButtons.forEach(button =>{})` = Se encarga de que si se le da a un boton del conjunto de botones pasados, en este caso los tipos de pokemon, este primero se fija si hay antes uno seleccionado, si es asi lo deselecciona para seleccionar el nuevo. 
+
+- `removeSelected()` = Se encarga al igual que `removeTypeSelected` de remover el estilo pero en este caso a los botones de las generacion, dichos botones estan declarados en `obainForApi`.
+
+- `gens.forEach(gen =>{})` = Parecodp a `typeButtons.forEach(button =>{})` pero este es sobre los botones de las generaciones.
+
+- `initializeAnimations()` = Esta funcion se encarga de inicializar las animaciones que se hacen con la libreria ScrollReveal, dichas animaciones se aplican para
+el header y para el acordion de la busqueda avanzada.
+
+- `returnButton.addEventListener("click", ()=> {})` = Este evento se encarga que al hacer click  en el boton con la flecha para arriba este te manda para el principio del mainContainer con una animacion suave.
+
+- `inputSearch.addEventListener("input", () =>{})` = Se encarga de manejar la logica de busqueda a traves de un input, por cada letra que se escriba se actualiza en tiempo real, si el nombre pasado esta contenido en el nombre de un pokemon, este se muestra en pantalla.  
+
+- `showByType()` = Se encarga de mostrar en la pagina unicamente las tarjetas pokemon del tipo seleccionado.
+
+- `typeButtons.forEach((button) => {` = Se encarga de la logica de al seleccionar uno de los botones de tipos, este llame a showByType y pasarle el tipo que el usuario selecciono para mostrarlo en pantalla.
+
+- `document.addEventListener("DOMContentLoaded", stylizeButtons)` y ` document.addEventListener("DOMContentLoaded", initializeAnimations)` = Se encarga de ejecutar 2 funciones para inicializar las animaciones y la estilizacion de los botones. 
+
+- `arrowButton.addEventListener("click", toggleAdvanceSearch)` = Se encarga de inicializar el evento de click para al hacer click en el arrowButton, este ejecute la funcion que muestra el menu de busqueda avanzada.
+
+- `btnOpenMenu.addEventListener("click", toggleMenu)` y `btnCloseMenu.addEventListener("click", toggleMenu)` = Inicializa los eventos click para abrir y cerra el modal y el menu lateral para la version mobile
+
+==== `obtainForApi.js`
+
+`obtainForApi.js` Se encarga de manejar la logica de la obtencion de datos de la api y la creacion de las cartas pokemon que se dibujaran en el contenedor de estas
+A continuacion paso a dar explicacion de todas las funciones.
+
+- Variables: Primero declaramos un par de variables, esta seran las siguientes:
+
+* `cardsContainer` = Obtenemos el contenedor de las cartas pokemons.
+
+* `gens` = Obtenemos todos los botones de las generaciones pokemons.
+
+* `apiUrl` = Guardamos el link de la pokeApi para luego hacer llamadas a esta.
+
+* `window.sr` = Se inicializa la libreria ScrollReveal.
+
+- `obtainData()` = Es una funcion asincronica, esta se encarga de hacer las llamadas a la api entre 2 numeros que se le pasen que corresponde al primer y ultimo pokemon de cada generacion.
+Realiza las llamadas y luego las recorre una por una para llamar a la funcion `drawData`(explicada abajo) para luego agregarle animaciones al contenedor de los pokemons, luego inicializa los 
+botones more info llamando a `inicializeGenButtons`(metodo de modalStatsConfig) y por ultimo quitarle el preloader de la pagina
+
+- `drawData()` = Se encarga de dibujar los datos del pokemon que se le pasen.
+Creando el contenedor de la carta, para luego obtener los datos del tipo para darle los estilos a la parte de los tipos dependiendo el nombre, le agrega la clase 
+utilizando la funcion `obtainType`. Por ultimo se crea la estructura y se rellena con los datos del pokemon para luego agregarla al contenedor de las cartas.
+
+- `obtainType()` = Se encarga de devolver el nombre de la clase dependiendo del tipo que se le pase. 
+
+- `genRange` = Es un objeto de tipo clave valor que dependiendo el nombre de la region, nos devuelve un array del primer y ultimo pokemon de dicha generacion.
+
+- `gens.forEach((gen) => {})` = Esta funcion se encarga de mostrar los pokemons dependiendo la generacion seleccionada.
+Se obtiene el rango de los pokemon para luego vaciar el contenido del contenedor y agregar los nuevos pokemons llamando de nuevo a `obtainData()` pero en este caso se le pasa el rango de la generacion previamente obtenida.
+
+- `document.addEventListener("DOMContentLoaded", obtainData(apiUrl,1 , 151))` = Una vez cargado el DOOM se inicializa el evento de llamar a la funcion obtainData para dibujar las cartas de la primera generacion de pokemon. 
+
+==== `modalStatsConfig.js`
+
+
 
 === Formulario contacto
 
-==== contact.html
+==== `contact.html`
 
-- El `contact.html` es la pagina del formulario de contacto, esta pagina esta dividida en secciones distinta que cumplen una funcionalidad distinta.
+El `contact.html` es la pagina del formulario de contacto, esta pagina esta dividida en secciones distinta que cumplen una funcionalidad distinta.
 La primera seccion es un header, desde ahi el usuario podra ingresar tanto a la pagina de la pokedex como a la de contacto.
 La segunda seccion es la que contiene el formulario, dicho formulario pide el nombre del usuario, su mail y su contacto para luego con un boton enviar el mensaje.
 Por ultimo cuenta con un footer en donde tambien nos muestran unos datos basicos como en el header.
 
-==== contact-mobile.css
+==== `contact-mobile.css`
 
 `contact-mobile.css` Se encarga de estilizar toda la parte de los estilos para que la pagina se adapte a dispositivos moviles.
 
-==== contact-tablet-Desktop.css
+==== `contact-tablet-Desktop.css`
 
 `contact-tablet-Desktop.css` Se encarga de estilizar la pagina para que se adapte a tablets y a pc.
 
-==== `ScrollReveal.js`
+==== `Contact.js`
 
-`ScrollReveal.js` Es una libreria de javascript que se encarga de dar animaciones cuando una seccion entra en el viewport.
-
-==== `emailJS.js`
-
-`emailJS.js` Es una libreria de javascript que se encarga de enviar mails, esto se debe configurar en la pagina de la libreria para poder usarlo
-
-==== Contact.js`
-
-`Contact.js` es eñ archivo que se encarga de mover toda la logica de la pagina de contacto.
+`Contact.js` es el archivo que se encarga de mover toda la logica de la pagina de contacto.
 A continuacion paso a dar explicacion de todas las funciones.
 
 - Variables: Primero declaramos un par de variables, esta seran las siguientes:
@@ -155,17 +276,21 @@ A continuacion paso a dar explicacion de todas las funciones.
 * returnBtn = Obtenemos el boton el cual sirve para volver a la parte superior de la pagina con una animacion.
 * formBtn = Obtenemos el boton para enviar el formulario.
 
-- toggleMenu() = Esta funcion se encarga de mostrar u ocultar el modal y menu lateral, dependiendo el estado este agrega o quita claaes al modal y menu lateral, 
+- `toggleMenu()` = Esta funcion se encarga de mostrar u ocultar el modal y menu lateral, dependiendo el estado este agrega o quita claaes al modal y menu lateral, 
 por ultimo tambien oculta el scroll cuando dicho modal este abierto.
 
-- initializeAnimations() = Esta funcion se encarga de inicializar las animaciones que se hacen con la libreria ScrollReveal, dichas animaciones se aplican para
+- `initializeAnimations()` = Esta funcion se encarga de inicializar las animaciones que se hacen con la libreria ScrollReveal, dichas animaciones se aplican para
 el header, para la informacion principal que se muestra a la hora de mostrar la pagina, para el contenedor de la busqueda rapida y 
 tambien para el contenedor del pokemon random.
 
-- returButton.addEventListener("click", ()=> {}) = Este evento se encarga que al hacer click  en el boton con la flecha para arriba este te manda para el header con una animacion suave.
+- `returButton.addEventListener("click", ()=> {})` = Este evento se encarga que al hacer click  en el boton con la flecha para arriba este te manda para el header con una animacion suave.
 
-- verifYMail() = se encarga de verificar si el mail del input, cumple con los dominios aceptados por la pagina
+- `verifYMail()` = se encarga de verificar si el mail del input, cumple con los dominios aceptados por la pagina
 
-document.getElementById("form").addEventListener("submit", (event) => {}) = Este evento se encarga de que una vez dado al boton submir, este utiliza la libreria `emailJS.js`, 
+- `document.getElementById("form").addEventListener("submit", (event) => {})` = Este evento se encarga de que una vez dado al boton submir, este utiliza la libreria `emailJS.js`, 
 antes verifica si el mail existe, si no tira una alerta y sale de la funcion. Si cumple, con el metodo sendForm envia un mail con los datos y estructura creada previamente con
 los templates pre configurados.
+
+- `btnOpenMenu.addEventListener("click", toggleMenu) y btnCloseMenu.addEventListener("click", toggleMenu)` = Inicializa los eventos para mostrar y ocultar el modal con los botones btnOpenMenu y btnCloseMenu.
+
+- `document.addEventListener("DOMContentLoaded", initializeAnimations)` = Luego que se cargue el DOOM, se ejecuta la funcion initializeAnimations.
