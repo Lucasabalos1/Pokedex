@@ -9,7 +9,7 @@ v1, {docdate}.
 == Introduccion
 
 El proyecta presenta un conjunto de pagina sobre una pokedex funcional en donde  el
-usuario navegara en la pagina en donde puede obtener los datos de los pokemons que el quiera ya sea por tipo, generacion o nombre
+usuario navegara en la pagina en donde puede obtener los datos de los pokemons que el quiera ya sea por tipo, generacion o nombre.
 
 - El menu de inicio contiene los siguientes archivos:
 
@@ -43,7 +43,7 @@ usuario navegara en la pagina en donde puede obtener los datos de los pokemons q
 * `libreria ScrollReveal.js`
 * `libreria EmailJS.js`
 
-El sistema cuenta con 3 paginas las cuales se dividen las siguientes funcionalidades
+El sistema cuenta con 3 paginas las cuales se dividen las siguientes funcionalidades.
 
 La primera es el home, el usuario navegara en una pagina de inicio en donde desde ahi podra
 hacer una busqueda rapida o ir directamente a la pokedex o al formulario de contacto.
@@ -64,7 +64,7 @@ Dicho sistema utiliza la PokeApi, una API publica en donde se puede obtener todo
 
 ==== `emailJS.js`
 
-`emailJS.js` Es una libreria de javascript que se encarga de enviar mails, esto se debe configurar en la pagina de la libreria para poder usarlo
+`emailJS.js` Es una libreria de javascript que se encarga de enviar mails, esto se debe configurar en la pagina de la libreria para poder usarlo.
 
 === Partes de html en todos los archivos .html
 
@@ -143,19 +143,19 @@ Por ultimo se cuenta con la seccion preloader, la cual se quitara luego de que s
 
 ==== `mobileVersion.css`
 
-`mobileVersion.css` se encarga de estilizar la pagina para que se adapte a dispositivos moviles
+`mobileVersion.css` se encarga de estilizar la pagina para que se adapte a dispositivos moviles.
 
 ==== `desktopVersion.css`
 
-`desktopVersion.css` se encarga de estilizar la pagina para que se adapte a pc
+`desktopVersion.css` se encarga de estilizar la pagina para que se adapte a pc.
 
 ==== `tabletVersion.css`
 
-`tabletVersion.css` se encarga de estilizar la pagina para que se adapte a tablets
+`tabletVersion.css` se encarga de estilizar la pagina para que se adapte a tablets.
 
 === `modalStats.css`
 
-`modalStats.css` se encarga de estilizar el modal donde se muestra las estadisticas de los pokemons adaptandolo para mobile, tablet y pc
+`modalStats.css` se encarga de estilizar el modal donde se muestra las estadisticas de los pokemons adaptandolo para mobile, tablet y pc.
 
 ==== `pokedex.js`
 
@@ -170,10 +170,10 @@ A continuacion paso a dar explicacion de todas las funciones.
 * btnCloseMenu = Obtenemos el boton para cerrar el menu lateral y el modal.
 * returnBtn = Obtenemos el boton el cual sirve para volver a la parte superior de la pagina con una animacion.
 * arrowButton = Obtenemos el boton para abrir el acordion para la busqueda avanzada.
-* advanceSearch = Obtenemos la seccion donde esta estructurada la busqueda avanzada para luego mostrarla
-* typeButtons = Obtenemos los botones de todos los tipos de pokemon
-* mainContainer = Obtenemos el contenedor del main para utilozarla en el returnButton
-* inputSearch = obtenemos el input de la busqueda avanzada
+* advanceSearch = Obtenemos la seccion donde esta estructurada la busqueda avanzada para luego mostrarla.
+* typeButtons = Obtenemos los botones de todos los tipos de pokemon.
+* mainContainer = Obtenemos el contenedor del main para utilozarla en el returnButton.
+* inputSearch = obtenemos el input de la busqueda avanzada.
 
 - `toggleMenu()` = Esta funcion se encarga de mostrar u ocultar el modal y menu lateral, dependiendo el estado este agrega o quita claaes al modal y menu lateral, 
 por ultimo tambien oculta el scroll cuando dicho modal este abierto.
@@ -184,7 +184,7 @@ por ultimo tambien oculta el scroll cuando dicho modal este abierto.
 
 - `selectType(tipo)` = Se encarga de devolver el nombre de una clase, dependiendo el nombre del tipo que se le pase, se utiliza en la funcion anterior.
 
-- `removeTypeSelected()` = Remueve el color de un boton si este esta seleccionado
+- `removeTypeSelected()` = Remueve el color de un boton si este esta seleccionado.
 
 - `typeButtons.forEach(button =>{})` = Se encarga de que si se le da a un boton del conjunto de botones pasados, en este caso los tipos de pokemon, este primero se fija si hay antes uno seleccionado, si es asi lo deselecciona para seleccionar el nuevo. 
 
@@ -207,11 +207,11 @@ el header y para el acordion de la busqueda avanzada.
 
 - `arrowButton.addEventListener("click", toggleAdvanceSearch)` = Se encarga de inicializar el evento de click para al hacer click en el arrowButton, este ejecute la funcion que muestra el menu de busqueda avanzada.
 
-- `btnOpenMenu.addEventListener("click", toggleMenu)` y `btnCloseMenu.addEventListener("click", toggleMenu)` = Inicializa los eventos click para abrir y cerra el modal y el menu lateral para la version mobile
+- `btnOpenMenu.addEventListener("click", toggleMenu)` y `btnCloseMenu.addEventListener("click", toggleMenu)` = Inicializa los eventos click para abrir y cerra el modal y el menu lateral para la version mobile.
 
 ==== `obtainForApi.js`
 
-`obtainForApi.js` Se encarga de manejar la logica de la obtencion de datos de la api y la creacion de las cartas pokemon que se dibujaran en el contenedor de estas
+`obtainForApi.js` Se encarga de manejar la logica de la obtencion de datos de la api y la creacion de las cartas pokemon que se dibujaran en el contenedor de estas.
 A continuacion paso a dar explicacion de todas las funciones.
 
 - Variables: Primero declaramos un par de variables, esta seran las siguientes:
@@ -226,7 +226,7 @@ A continuacion paso a dar explicacion de todas las funciones.
 
 - `obtainData()` = Es una funcion asincronica, esta se encarga de hacer las llamadas a la api entre 2 numeros que se le pasen que corresponde al primer y ultimo pokemon de cada generacion.
 Realiza las llamadas y luego las recorre una por una para llamar a la funcion `drawData`(explicada abajo) para luego agregarle animaciones al contenedor de los pokemons, luego inicializa los 
-botones more info llamando a `inicializeGenButtons`(metodo de modalStatsConfig) y por ultimo quitarle el preloader de la pagina
+botones more info llamando a `inicializeGenButtons`(metodo de modalStatsConfig) y por ultimo quitarle el preloader de la pagina.
 
 - `drawData()` = Se encarga de dibujar los datos del pokemon que se le pasen.
 Creando el contenedor de la carta, para luego obtener los datos del tipo para darle los estilos a la parte de los tipos dependiendo el nombre, le agrega la clase 
@@ -248,19 +248,19 @@ A continuacion paso a dar explicacion de todas las funciones.
 
 - Variables: Primero declaramos un par de variables, esta seran las siguientes:
 
-* `modalStats` = obtenemos el contenedor del modal de las estadisticas de los pokemons
+* `modalStats` = obtenemos el contenedor del modal de las estadisticas de los pokemons.
 
-- `randomNumber(moves)` = Devuelve un numero random entre el 0 y la cantidad de movimientos de un pokemon
+- `randomNumber(moves)` = Devuelve un numero random entre el 0 y la cantidad de movimientos de un pokemon.
 
 - `modificateBars(bars)` = Se encarga de seleccionar las barras de estadisticas del pokemon seleccionado y darle un largo dependiendo el numero de la stats, para luego pintarlo dependiendo el largo de la barra llamando a `selectColorBar(stat)`
-si el numero supera los 100, quedara siempre en la barra maxima 
+si el numero supera los 100, quedara siempre en la barra maxima.
 
-- `selectColorBar(stat)` = verifica el numero de la stat y le da la clase, dependiendo el numero va a ser de un color u otro 
+- `selectColorBar(stat)` = verifica el numero de la stat y le da la clase, dependiendo el numero va a ser de un color u otro.
 
 - `initializeInfoButtons()` = Se encarga de inicializar los botones more info, esta funcion se llama luego de que se cargen las cartas pokemon, tambien se encarga de manejar la logica de al darle al boton, mostrar el modal por encima, quitar el scroll del contenedor principal y
-dependiendo el id de la carta que pertenezca el boton, esto se la pasa a `drawModal` para que dibuje dicho modal en pantalla
+dependiendo el id de la carta que pertenezca el boton, esto se la pasa a `drawModal` para que dibuje dicho modal en pantalla.
 
-- `drawModal(url)` = Se encarga de dibujar el modal con los datos pasado de la url, crea un contenedor donde se guardara los datos, se le agrega la clase con los estilos
+- `drawModal(url)` = Se encarga de dibujar el modal con los datos pasado de la url, crea un contenedor donde se guardara los datos, se le agrega la clase con los estilos.
 y luego se le agrega la estructura de los datos de la url, por ultimo los agrega al contenedor y llama a la funcion `modificateBars` y le da los estilos a la barras de estadisticas.
 
 - `document.querySelector(".cross-container").addEventListener("click", () => {})` = Se encarga de darle la logica al boton de cerrar el modal, reestablecer el scroll y por ultimo quitar el modal del contenedor modalStats para que no se muestren 2 al darle a otro boton.
@@ -305,7 +305,7 @@ tambien para el contenedor del pokemon random.
 
 - `returButton.addEventListener("click", ()=> {})` = Este evento se encarga que al hacer click  en el boton con la flecha para arriba este te manda para el header con una animacion suave.
 
-- `verifYMail()` = se encarga de verificar si el mail del input, cumple con los dominios aceptados por la pagina
+- `verifYMail()` = se encarga de verificar si el mail del input, cumple con los dominios aceptados por la pagina.
 
 - `document.getElementById("form").addEventListener("submit", (event) => {})` = Este evento se encarga de que una vez dado al boton submir, este utiliza la libreria `emailJS.js`, 
 antes verifica si el mail existe, si no tira una alerta y sale de la funcion. Si cumple, con el metodo sendForm envia un mail con los datos y estructura creada previamente con
@@ -314,3 +314,8 @@ los templates pre configurados.
 - `btnOpenMenu.addEventListener("click", toggleMenu) y btnCloseMenu.addEventListener("click", toggleMenu)` = Inicializa los eventos para mostrar y ocultar el modal con los botones btnOpenMenu y btnCloseMenu.
 
 - `document.addEventListener("DOMContentLoaded", initializeAnimations)` = Luego que se cargue el DOOM, se ejecuta la funcion initializeAnimations.
+
+== Conclusion
+
+En conclusion, realizar este proyecto me a ayudado a aprender muchisimas cosas nuevas en las tecnologias utilizadas. Si bien me eh tardado mi tiempo creo que 
+obtuve un resultado decente para ser el primer proyecto fron-end "grande" que hago. Continuare aprendiendo para ver si a futuro puedo mejorar el proyecto.
