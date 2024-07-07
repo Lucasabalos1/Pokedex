@@ -8,7 +8,7 @@ v1, {docdate}.
 
 == Introduccion
 
-El proyecta presenta un conjunto de pagina sobre una pokedex funcional en donde  el
+El proyecto presenta un conjunto de pagina sobre una pokedex funcional en donde  el
 usuario navegara en la pagina en donde puede obtener los datos de los pokemons que el quiera ya sea por tipo, generacion o nombre.
 
 - El menu de inicio contiene los siguientes archivos:
