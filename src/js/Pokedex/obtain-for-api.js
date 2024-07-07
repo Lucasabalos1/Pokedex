@@ -27,7 +27,7 @@ const obtainData = async (apiUrl, start, end) => {
 
         document.querySelector(".preloader").style.display = "none";
         document.querySelector(".main-container").style.display = "block";
-        initializeGenButtons();
+        initializeInfoButtons();
     } catch (error) {
         console.log("La api fallo");
     }
@@ -125,7 +125,6 @@ gens.forEach((gen) => {
         const getRange = genRange[gen.textContent];
         cardsContainer.innerHTML = "";
         obtainData(apiUrl, getRange[0], getRange[1]);
-        initializeGenButtons();
     });
 });
 

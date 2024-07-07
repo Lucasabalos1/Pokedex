@@ -30,7 +30,7 @@ const modificateBars = (bars) => {
     });
 }
 
-const initializeGenButtons = () => {
+const initializeInfoButtons = () => {
         const moreInfo = document.querySelectorAll(".button-info");
 
         moreInfo.forEach((button) => {
