@@ -129,7 +129,7 @@ que se le paso para que luego se realice un scroll suave hacia abajo mostrando e
 
 - `document.addEventListener("DOMContentLoaded", generatePokemon(generateRandomNumber()))` = Luego de que se cargue el DOOM, se ejecuta la funcione generatePokemon(generateRandomNumber()).
 
-==== Pokedex
+=== Pokedex
 
 ==== `pokedex.html`
 
@@ -243,7 +243,27 @@ Se obtiene el rango de los pokemon para luego vaciar el contenido del contenedor
 
 ==== `modalStatsConfig.js`
 
+`modalStatsConfig.js` Se encarga de manejar la logica de mostrar el modal con las estadisticas de los pokemons y lo relacionado con este.
+A continuacion paso a dar explicacion de todas las funciones.
 
+- Variables: Primero declaramos un par de variables, esta seran las siguientes:
+
+* `modalStats` = obtenemos el contenedor del modal de las estadisticas de los pokemons
+
+- `randomNumber(moves)` = Devuelve un numero random entre el 0 y la cantidad de movimientos de un pokemon
+
+- `modificateBars(bars)` = Se encarga de seleccionar las barras de estadisticas del pokemon seleccionado y darle un largo dependiendo el numero de la stats, para luego pintarlo dependiendo el largo de la barra llamando a `selectColorBar(stat)`
+si el numero supera los 100, quedara siempre en la barra maxima 
+
+- `selectColorBar(stat)` = verifica el numero de la stat y le da la clase, dependiendo el numero va a ser de un color u otro 
+
+- `initializeInfoButtons()` = Se encarga de inicializar los botones more info, esta funcion se llama luego de que se cargen las cartas pokemon, tambien se encarga de manejar la logica de al darle al boton, mostrar el modal por encima, quitar el scroll del contenedor principal y
+dependiendo el id de la carta que pertenezca el boton, esto se la pasa a `drawModal` para que dibuje dicho modal en pantalla
+
+- `drawModal(url)` = Se encarga de dibujar el modal con los datos pasado de la url, crea un contenedor donde se guardara los datos, se le agrega la clase con los estilos
+y luego se le agrega la estructura de los datos de la url, por ultimo los agrega al contenedor y llama a la funcion `modificateBars` y le da los estilos a la barras de estadisticas.
+
+- `document.querySelector(".cross-container").addEventListener("click", () => {})` = Se encarga de darle la logica al boton de cerrar el modal, reestablecer el scroll y por ultimo quitar el modal del contenedor modalStats para que no se muestren 2 al darle a otro boton.
 
 === Formulario contacto
 
